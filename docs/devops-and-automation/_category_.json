@@ -1,0 +1,9 @@
+{
+    "label": "DevOps and Automation",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "description": "CI/CD pipelines, infrastructure management, and automated deployments."
+    }
+  }
+  
