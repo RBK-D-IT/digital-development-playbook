@@ -66,4 +66,4 @@ Our team follows **GitHub Flow** as our primary branching strategy. GitHub Flow 
 
 6. **Create a Release**:
    - Once the code in `main` is stable and ready for production, follow the release process to create a release candidate and deploy it to **test** and eventually **production**.
-   - For detailed instructions on creating releases, see the [Deployment Process](../devops-and-aws-infrastructure/deployment-process.md).
+   - For detailed instructions on creating releases, see the [Deployment Process](../devops-and-automation/deployment-process.md).
