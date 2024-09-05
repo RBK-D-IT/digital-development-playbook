@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-devops-and-automation/deployment-process" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">Deployment Process | Digital Development Playbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://github.com/digital-development-playbook/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://github.com/digital-development-playbook/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://github.com/digital-development-playbook/devops-and-automation/deployment-process"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deployment Process | Digital Development Playbook"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/digital-development-playbook/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://github.com/digital-development-playbook/devops-and-automation/deployment-process"><link data-rh="true" rel="alternate" href="https://github.com/digital-development-playbook/devops-and-automation/deployment-process" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/digital-development-playbook/devops-and-automation/deployment-process" hreflang="x-default"><link rel="stylesheet" href="/digital-development-playbook/assets/css/styles.310e4b26.css">
+<script src="/digital-development-playbook/assets/js/runtime~main.f7950409.js" defer="defer"></script>
+<script src="/digital-development-playbook/assets/js/main.4bc8a566.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/digital-development-playbook/"><div class="navbar__logo"><img src="/digital-development-playbook/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/digital-development-playbook/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Digital Development Playbook</b></a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/facebook/docusaurus" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/digital-development-playbook/">Introduction</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/digital-development-playbook/category/general-development-practices">General Development Practices</a><button aria-label="Expand sidebar category &#x27;General Development Practices&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/digital-development-playbook/category/devops-and-automation">DevOps and Automation</a><button aria-label="Collapse sidebar category &#x27;DevOps and Automation&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/digital-development-playbook/devops-and-automation/cicd-pipeline-and-automation">CI/CD Pipeline and Automation</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/digital-development-playbook/devops-and-automation/deployment-process">Deployment Process</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/digital-development-playbook/devops-and-automation/infrastructure-as-code">Infrastructure as Code</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/digital-development-playbook/devops-and-automation/monitoring-and-alerts">Monitoring and Alerts</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/digital-development-playbook/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/digital-development-playbook/category/devops-and-automation"><span itemprop="name">DevOps and Automation</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Deployment Process</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Deployment Process</h1></header>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>This document outlines the detailed process for deploying code across the <strong>development</strong>, <strong>test</strong>, and <strong>production</strong> environments using <strong>GitHub Actions</strong>, <strong>AWS CDK</strong>, and <strong>AWS CloudFormation</strong>. The goal is to ensure that deployments are consistent, automated, and follow a structured workflow with proper validations and rollback mechanisms.</p>
+<p>The deployment process covers:</p>
+<ul>
+<li>How deployments are triggered.</li>
+<li>Who is responsible for different steps in the process.</li>
+<li>What happens before, during, and after a deployment.</li>
+<li>Rollback strategies in case of issues.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="aws-deployment-workflow-overview">AWS Deployment Workflow Overview<a href="#aws-deployment-workflow-overview" class="hash-link" aria-label="Direct link to AWS Deployment Workflow Overview" title="Direct link to AWS Deployment Workflow Overview">​</a></h2>
+<p>The following diagram provides an overview of how our code moves from <strong>GitHub</strong> to <strong>AWS</strong>, showing how our <strong>CI/CD process</strong> uses <strong>GitHub Actions</strong>, <strong>AWS CDK</strong>, and <strong>CloudFormation</strong> to deploy applications and infrastructure automatically:</p>
+<p><img decoding="async" loading="lazy" alt="AWS Deployment Architecture" src="/digital-development-playbook/assets/images/aws-deployment-architecture-cdad11b0f502c8aa93de198a3534a77c.png" width="1920" height="766" class="img_ev3q"></p>
+<p><strong>Steps Explained</strong>:</p>
+<ol>
+<li><strong>Build and Test</strong>: After a pull request is merged into <code>main</code>, the GitHub Actions pipeline runs the build and test process.</li>
+<li><strong>OpenID Connect (OIDC)</strong>: The GitHub Actions workflow requests an OIDC token from the identity provider for authentication with AWS.</li>
+<li><strong>Temporary Token Issued</strong>: AWS issues a temporary token via <strong>Security Token Service (STS)</strong> to authenticate the workflow.</li>
+<li><strong>IAM Role Assumed</strong>: GitHub Actions assumes an <strong>IAM role</strong> to gain permissions for deploying resources to AWS.</li>
+<li><strong>Temporary AWS Credentials</strong>: The workflow is granted temporary AWS credentials to perform actions within AWS.</li>
+<li><strong>Run CDK Synthesis and Deployment</strong>: <strong>AWS CDK</strong> synthesizes the CloudFormation templates and initiates the deployment process.</li>
+<li><strong>Deploy AWS Resources</strong>: Using the CloudFormation templates, AWS resources such as <strong>Lambda functions</strong>, <strong>API Gateway</strong>, and <strong>CloudWatch Logs</strong> are provisioned and deployed.</li>
+</ol>
+<p>This diagram visually represents the flow of deployment tasks, which are described in more detail in the deployment stages below.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-stages">Deployment Stages<a href="#deployment-stages" class="hash-link" aria-label="Direct link to Deployment Stages" title="Direct link to Deployment Stages">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-deployment-to-development-environment">1. Deployment to Development Environment<a href="#1-deployment-to-development-environment" class="hash-link" aria-label="Direct link to 1. Deployment to Development Environment" title="Direct link to 1. Deployment to Development Environment">​</a></h3>
+<p>Deployments to the <strong>development environment</strong> are triggered automatically through the CI pipeline whenever changes are merged into the <code>main</code> branch.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="steps">Steps:<a href="#steps" class="hash-link" aria-label="Direct link to Steps:" title="Direct link to Steps:">​</a></h4>
+<ol>
+<li><strong>Trigger</strong>: After a pull request (PR) is merged into <code>main</code>, the GitHub Actions pipeline is triggered.</li>
+<li><strong>Build and Test</strong>: The application is built, and all tests (unit, integration, E2E) are run.</li>
+<li><strong>AWS CDK Deployment</strong>:<!-- -->
+<ul>
+<li>The pipeline assumes an AWS role for the <strong>development account</strong>.</li>
+<li>AWS CDK provisions the necessary infrastructure and deploys the application to the development environment via CloudFormation.</li>
+</ul>
+</li>
+<li><strong>Smoke Testing</strong>: Basic smoke tests are run in the development environment to ensure the deployment was successful.</li>
+<li><strong>Feedback</strong>: If the deployment or tests fail, feedback is provided to the development team for further action.</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="who-is-involved">Who is involved:<a href="#who-is-involved" class="hash-link" aria-label="Direct link to Who is involved:" title="Direct link to Who is involved:">​</a></h4>
+<ul>
+<li><strong>Developers</strong>: Responsible for managing the CI/CD pipeline, monitoring the deployment process, and resolving any issues that arise during deployment or testing.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-deployment-to-test-environment">2. Deployment to Test Environment<a href="#2-deployment-to-test-environment" class="hash-link" aria-label="Direct link to 2. Deployment to Test Environment" title="Direct link to 2. Deployment to Test Environment">​</a></h3>
+<p>Deployments to the <strong>test environment</strong> are triggered manually when a release candidate is ready for testing.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="steps-1">Steps:<a href="#steps-1" class="hash-link" aria-label="Direct link to Steps:" title="Direct link to Steps:">​</a></h4>
+<ol>
+<li><strong>Create a Release Candidate</strong>: The development team drafts a release candidate on GitHub and tags it as a pre-release.</li>
+<li><strong>Trigger the Test Deployment</strong>: Once the release candidate is created, a manual deployment to the test environment is triggered via GitHub Actions.</li>
+<li><strong>AWS CDK Deployment</strong>:<!-- -->
+<ul>
+<li>The pipeline assumes an AWS role for the <strong>test account</strong>.</li>
+<li>AWS CDK provisions the infrastructure and deploys the release candidate to the test environment via CloudFormation.</li>
+</ul>
+</li>
+<li><strong>Run Tests</strong>:<!-- -->
+<ul>
+<li>Integration tests and smoke tests are re-run in the test environment.</li>
+</ul>
+</li>
+<li><strong>User Acceptance Testing (UAT)</strong>:<!-- -->
+<ul>
+<li>The <strong>Testing Team</strong> performs UAT based on the test plan to validate the release candidate. They create and execute test plans to ensure the software meets the business requirements.</li>
+</ul>
+</li>
+<li><strong>Approval or Rollback</strong>:<!-- -->
+<ul>
+<li>If the UAT passes, the release candidate is approved for production.</li>
+<li>If issues arise, the team addresses the issues in the development environment and re-tests the release.</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="who-is-involved-1">Who is involved:<a href="#who-is-involved-1" class="hash-link" aria-label="Direct link to Who is involved:" title="Direct link to Who is involved:">​</a></h4>
+<ul>
+<li><strong>Developers</strong>: Responsible for creating the release candidate, deploying it to the test environment, and fixing any issues discovered during testing.</li>
+<li><strong>Testing Team</strong>: Responsible for creating the UAT plan, conducting the UAT, and reporting any issues that need resolution.</li>
+<li><strong>Stakeholders</strong>: May participate in reviewing the results of UAT and provide feedback or approval for the release candidate.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-deployment-to-production-environment">3. Deployment to Production Environment<a href="#3-deployment-to-production-environment" class="hash-link" aria-label="Direct link to 3. Deployment to Production Environment" title="Direct link to 3. Deployment to Production Environment">​</a></h3>
+<p>Deployments to the <strong>production environment</strong> are triggered manually after a release candidate has passed all tests and UAT in the test environment.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="steps-2">Steps:<a href="#steps-2" class="hash-link" aria-label="Direct link to Steps:" title="Direct link to Steps:">​</a></h4>
+<ol>
+<li><strong>Create a Production Release</strong>: Once UAT is complete, the release candidate is finalized, and a production release is created and tagged in GitHub.</li>
+<li><strong>Trigger the Production Deployment</strong>: The deployment is triggered manually via GitHub Actions.</li>
+<li><strong>AWS CDK Deployment</strong>:<!-- -->
+<ul>
+<li>The pipeline assumes an AWS role for the <strong>production account</strong>.</li>
+<li>AWS CDK provisions the infrastructure and deploys the release to production via CloudFormation.</li>
+</ul>
+</li>
+<li><strong>Smoke Testing</strong>:<!-- -->
+<ul>
+<li>Basic smoke tests are run to verify that key functionalities are working in production.</li>
+</ul>
+</li>
+<li><strong>Post-Deployment Monitoring</strong>:<!-- -->
+<ul>
+<li>Monitoring tools like AWS CloudWatch are used to track application performance and identify potential issues.</li>
+</ul>
+</li>
+<li><strong>Rollback Mechanism</strong>:<!-- -->
+<ul>
+<li>If any critical issues are detected in production, the deployment is rolled back to the previous stable version automatically using AWS CloudFormation.</li>
+</ul>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="who-is-involved-2">Who is involved:<a href="#who-is-involved-2" class="hash-link" aria-label="Direct link to Who is involved:" title="Direct link to Who is involved:">​</a></h4>
+<ul>
+<li><strong>Developers</strong>: Manage the production deployment process, monitor the system post-deployment, and address any issues that arise during or after deployment.</li>
+<li><strong>Testing Team</strong>: May assist in validating the final release, ensuring it matches the UAT expectations.</li>
+<li><strong>Stakeholders</strong>: May validate the production release post-deployment to ensure it meets business requirements.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="rollback-strategy">Rollback Strategy<a href="#rollback-strategy" class="hash-link" aria-label="Direct link to Rollback Strategy" title="Direct link to Rollback Strategy">​</a></h2>
+<p>For every environment, we implement an automated rollback strategy in case the deployment encounters issues. This ensures that we can quickly revert to a stable state without manual intervention.</p>
+<ul>
+<li><strong>AWS CloudFormation Rollback</strong>: If any deployment fails during the infrastructure provisioning, AWS CloudFormation automatically reverts the changes to the previous state.</li>
+<li><strong>Application Rollback</strong>: In case of application issues, the GitHub Actions pipeline can be configured to roll back to the previous stable version of the application.</li>
+</ul>
+<p><strong>Manual Intervention</strong>: In cases where manual rollback is necessary (e.g., during production incidents), the DevOps team is responsible for initiating the rollback using the predefined rollback procedures.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-responsibilities">Deployment Responsibilities<a href="#deployment-responsibilities" class="hash-link" aria-label="Direct link to Deployment Responsibilities" title="Direct link to Deployment Responsibilities">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="developers">Developers<a href="#developers" class="hash-link" aria-label="Direct link to Developers" title="Direct link to Developers">​</a></h3>
+<ul>
+<li><strong>Trigger Development Deployments</strong>: Automatically triggered when merging pull requests.</li>
+<li><strong>Monitor Development Environment</strong>: Ensure that development deployments are functioning as expected.</li>
+<li><strong>Draft Release Candidates</strong>: When code is stable, create release candidates for testing.</li>
+<li><strong>Manage Test and Production Deployments</strong>: Oversee deployments to test and production environments.</li>
+<li><strong>Fix Issues</strong>: Resolve any issues that occur during testing, UAT, or production deployment.</li>
+<li><strong>Manage Rollbacks</strong>: Handle any necessary rollbacks in the event of a deployment failure.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="testing-team">Testing Team<a href="#testing-team" class="hash-link" aria-label="Direct link to Testing Team" title="Direct link to Testing Team">​</a></h3>
+<ul>
+<li><strong>Create UAT Test Plans</strong>: Develop and execute test plans to ensure the software meets business requirements.</li>
+<li><strong>Conduct UAT</strong>: Perform testing during UAT to validate the release candidate in the test environment.</li>
+<li><strong>Report Issues</strong>: Provide detailed feedback on any issues found during UAT for the developers to resolve.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="stakeholders">Stakeholders<a href="#stakeholders" class="hash-link" aria-label="Direct link to Stakeholders" title="Direct link to Stakeholders">​</a></h3>
+<ul>
+<li><strong>Provide Feedback</strong>: Review UAT results and provide feedback.</li>
+<li><strong>Validate Production Release</strong>: Provide final validation after the production deployment, if needed.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="deployment-validation-and-monitoring">Deployment Validation and Monitoring<a href="#deployment-validation-and-monitoring" class="hash-link" aria-label="Direct link to Deployment Validation and Monitoring" title="Direct link to Deployment Validation and Monitoring">​</a></h2>
+<p>For every deployment, the following validation and monitoring steps are performed:</p>
+<ul>
+<li><strong>Smoke Tests</strong>: Automatically run smoke tests after each deployment to validate that critical functionality is working.</li>
+<li><strong>Monitoring Tools</strong>: Use AWS CloudWatch or similar tools to monitor the health and performance of the application post-deployment.</li>
+<li><strong>Alerts</strong>: Set up automatic alerts for any failures or performance degradations in the production environment.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="tools-and-technologies">Tools and Technologies<a href="#tools-and-technologies" class="hash-link" aria-label="Direct link to Tools and Technologies" title="Direct link to Tools and Technologies">​</a></h2>
+<ul>
+<li><strong>GitHub Actions</strong>: Used for automating the deployment process across environments.</li>
+<li><strong>AWS CDK</strong>: Manages infrastructure as code for all environments (development, test, production).</li>
+<li><strong>AWS CloudFormation</strong>: Used by AWS CDK to deploy and manage resources.</li>
+<li><strong>AWS IAM</strong>: Manages access and roles for deployment to different environments.</li>
+<li><strong>Monitoring Tools</strong>: AWS CloudWatch for performance monitoring and alerting.</li>
+</ul>
+<hr>
+<p>This deployment process ensures that our applications are deployed consistently and reliably across all environments. With a strong focus on automation, validation, and rollback strategies, we reduce manual intervention and increase deployment confidence.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/devops-and-automation/deployment-process.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/digital-development-playbook/devops-and-automation/cicd-pipeline-and-automation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">CI/CD Pipeline and Automation</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/digital-development-playbook/devops-and-automation/infrastructure-as-code"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Infrastructure as Code</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#aws-deployment-workflow-overview" class="table-of-contents__link toc-highlight">AWS Deployment Workflow Overview</a></li><li><a href="#deployment-stages" class="table-of-contents__link toc-highlight">Deployment Stages</a><ul><li><a href="#1-deployment-to-development-environment" class="table-of-contents__link toc-highlight">1. Deployment to Development Environment</a></li><li><a href="#2-deployment-to-test-environment" class="table-of-contents__link toc-highlight">2. Deployment to Test Environment</a></li><li><a href="#3-deployment-to-production-environment" class="table-of-contents__link toc-highlight">3. Deployment to Production Environment</a></li></ul></li><li><a href="#rollback-strategy" class="table-of-contents__link toc-highlight">Rollback Strategy</a></li><li><a href="#deployment-responsibilities" class="table-of-contents__link toc-highlight">Deployment Responsibilities</a><ul><li><a href="#developers" class="table-of-contents__link toc-highlight">Developers</a></li><li><a href="#testing-team" class="table-of-contents__link toc-highlight">Testing Team</a></li><li><a href="#stakeholders" class="table-of-contents__link toc-highlight">Stakeholders</a></li></ul></li><li><a href="#deployment-validation-and-monitoring" class="table-of-contents__link toc-highlight">Deployment Validation and Monitoring</a></li><li><a href="#tools-and-technologies" class="table-of-contents__link toc-highlight">Tools and Technologies</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
