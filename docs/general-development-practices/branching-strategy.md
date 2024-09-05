@@ -32,7 +32,7 @@ Our team follows **GitHub Flow** as our primary branching strategy. GitHub Flow 
 5. **Release Process**:
    - The code in `main` becomes **production-ready** only after it has passed testing in the **test environment** and a **release candidate** has been approved.
    - Once a release candidate is finalized, it is tagged as a **production release** and deployed to the **production environment**.
-   - For details on the release and deployment process, refer to the [Deployment Process](../devops-and-aws-infrastructure/deployment-process.md) document.
+   - For details on the release and deployment process, refer to the [Deployment Process](../devops-and-automation/deployment-process.md) document.
 
 ## Workflow Example
 
