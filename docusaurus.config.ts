@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/RBK-D-IT/digital-development-playbook',
+            'https://github.com/RBK-D-IT/digital-development-playbook/blob/main',
         },
         blog: false, // Optional: disable the blog plugin
         theme: {
