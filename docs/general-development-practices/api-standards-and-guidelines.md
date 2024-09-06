@@ -24,10 +24,10 @@ APIs should be designed to provide clear and intuitive access to resources. URLs
 #### Examples:
 
 - **Get all users**: `GET /api/users`
-- **Get a specific user**: `GET /api/users/{userId}`
+- **Get a specific user**: `GET /api/users/[userId]`
 - **Create a new user**: `POST /api/users`
-- **Update a user**: `PUT /api/users/{userId}`
-- **Delete a user**: `DELETE /api/users/{userId}`
+- **Update a user**: `PUT /api/users/[userId]`
+- **Delete a user**: `DELETE /api/users/[userId]`
 
 ### Query Parameters:
 
@@ -56,8 +56,8 @@ APIs should use standard HTTP methods to indicate the action being performed on 
 
 - **GET /api/users**: Retrieve all users.
 - **POST /api/users**: Create a new user.
-- **PUT /api/users/{userId}**: Update an existing user.
-- **DELETE /api/users/{userId}**: Delete a specific user.
+- **PUT /api/users/[userId]**: Update an existing user.
+- **DELETE /api/users/[userId]**: Delete a specific user.
 
 ---
 
