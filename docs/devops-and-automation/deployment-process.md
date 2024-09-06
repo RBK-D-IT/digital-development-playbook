@@ -61,7 +61,7 @@ Deployments to the **test environment** are triggered manually when a release ca
 
 #### Steps:
 
-1. **Create a Release Candidate**: The development team drafts a release candidate on GitHub and tags it as a pre-release.
+1. **Create a Release Candidate**: The development team drafts a release candidate on GitHub and tags it as a pre-release. Further details can be found in the [Release Process](release-process.md) guidance.
 2. **Trigger the Test Deployment**: Once the release candidate is created, a manual deployment to the test environment is triggered via GitHub Actions.
 3. **AWS CDK Deployment**:
    - The pipeline assumes an AWS role for the **test account**.
@@ -88,7 +88,7 @@ Deployments to the **production environment** are triggered manually after a rel
 
 #### Steps:
 
-1. **Create a Production Release**: Once UAT is complete, the release candidate is finalized, and a production release is created and tagged in GitHub.
+1. **Create a Production Release**: Once UAT is complete, the release candidate is finalized, and a production release is created and tagged in GitHub. Further details can be found in the [Release Process](release-process.md) guidance.
 2. **Trigger the Production Deployment**: The deployment is triggered manually via GitHub Actions.
 3. **AWS CDK Deployment**:
    - The pipeline assumes an AWS role for the **production account**.
@@ -116,6 +116,8 @@ For every environment, we implement an automated rollback strategy in case the d
 - **Application Rollback**: In case of application issues, the GitHub Actions pipeline can be configured to roll back to the previous stable version of the application.
 
 **Manual Intervention**: In cases where manual rollback is necessary (e.g., during production incidents), the DevOps team is responsible for initiating the rollback using the predefined rollback procedures.
+
+In case of issues during deployment, follow the rollback mechanism described in the [Release Process](release-process.md) for reverting to the last stable release.
 
 ---
 
