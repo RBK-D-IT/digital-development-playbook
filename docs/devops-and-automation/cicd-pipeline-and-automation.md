@@ -7,7 +7,7 @@ Our **CI/CD pipeline** automates the integration, testing, and deployment of cod
 The main stages in our CI/CD pipeline include:
 
 1. **Continuous Integration (CI)**: Automated testing and validation of code in a development environment.
-2. **Release Management**: Creation of release candidates and promotion to the test environment for further testing.
+2. **Release Management**: Creation of release branches and promotion to the test environment for further testing.
 3. **Continuous Deployment (CD)**: Automatic deployment of code to production with post-deployment validation and monitoring.
 
 ---
@@ -39,30 +39,30 @@ If any step fails, the pipeline notifies the developer, who can make the necessa
 
 ### 2. Release Management
 
-Once the code is stable and passes all CI checks, a **release candidate** is created for further testing and deployment to the **test environment**.
+Once the code is stable and passes all CI checks, a **release branch** is created to isolate code changes and prepare the release for further testing and deployment to the **test environment**.
 
 #### Steps in Release Management:
 
-- **Draft a Release Candidate**: A release candidate is drafted in GitHub with a version tag and marked as a pre-release.
+- **Create a Release Branch**: A new release branch (e.g., `release/v1.1.0`) is created from `main` to isolate the release.
 - **Deploy to Test**:
-  - The release candidate is deployed to the **test environment** for further testing and user acceptance.
+  - The release branch is deployed to the **test environment** for further testing and user acceptance.
   - **AWS CDK Deployment to Test**: Similar to the development environment, the CDK assumes an AWS role for the **test account** and deploys the application.
   - **Run Tests**: Integration and smoke tests are re-run in the test environment to validate the release.
-- **User Acceptance Testing (UAT)**: Stakeholders perform manual and automated UAT to validate the release candidate.
+- **User Acceptance Testing (UAT)**: Stakeholders perform manual and automated UAT to validate the release.
 
-If issues are found during UAT, the changes are pushed back to the development phase for further iterations.
+If issues are found during UAT, fixes are made directly in the release branch and redeployed to the **test environment**.
 
 ---
 
 ### 3. Continuous Deployment (CD)
 
-After a release candidate passes UAT in the test environment, it is promoted to a **production release** and deployed to the **production environment**.
+After the release branch passes UAT in the test environment, it is tagged and deployed to the **production environment**.
 
 #### Steps in the CD Stage:
 
-- **Create a Production Release**: Once approved, a production release is created and tagged in GitHub.
+- **Tag the Release**: Once approved, a production release tag (e.g., `v1.1.0`) is created from the release branch.
 - **Deploy to Production**:
-  - The release is deployed to the **production environment** using **AWS CDK**.
+  - The tagged release is deployed to the **production environment** using **AWS CDK**.
   - The pipeline assumes an AWS role for the **production account** and deploys the necessary infrastructure via **CloudFormation**.
 - **Post-Deployment Smoke Testing**: After deployment, smoke tests are automatically run to ensure the key functionalities are working in production.
 - **Post-Deployment Monitoring**: Continuous monitoring is activated to detect any performance or functionality issues.
@@ -85,7 +85,7 @@ After a release candidate passes UAT in the test environment, it is promoted to 
 ### 3. Environment-Specific Pipelines
 
 - **Development Environment**: Automate frequent deployments for internal testing and integration in the development environment.
-- **Test Environment**: Deploy release candidates to the test environment for UAT and performance validation.
+- **Test Environment**: Deploy release branches to the test environment for UAT and performance validation.
 - **Production Environment**: Production deployments should follow controlled procedures with automated rollbacks and post-deployment validations.
 
 ### 4. Rollback Mechanism

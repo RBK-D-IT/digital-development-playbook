@@ -57,39 +57,39 @@ Deployments to the **development environment** are triggered automatically throu
 
 ### 2. Deployment to Test Environment
 
-Deployments to the **test environment** are triggered manually when a release candidate is ready for testing.
+Deployments to the **test environment** are triggered manually when a release branch is ready for testing.
 
 #### Steps:
 
-1. **Create a Release Candidate**: The development team drafts a release candidate on GitHub and tags it as a pre-release. Further details can be found in the [Release Process](release-process.md) guidance.
-2. **Trigger the Test Deployment**: Once the release candidate is created, a manual deployment to the test environment is triggered via GitHub Actions.
+1. **Create a Release Branch**: The development team creates a release branch from `main`. Further details can be found in the [Release Process](release-process.md) guidance.
+2. **Trigger the Test Deployment**: Once the release branch is created, a deployment to the test environment is triggered via GitHub Actions.
 3. **AWS CDK Deployment**:
    - The pipeline assumes an AWS role for the **test account**.
-   - AWS CDK provisions the infrastructure and deploys the release candidate to the test environment via CloudFormation.
+   - AWS CDK provisions the infrastructure and deploys the release branch to the test environment via CloudFormation.
 4. **Run Tests**:
    - Integration tests and smoke tests are re-run in the test environment.
 5. **User Acceptance Testing (UAT)**:
-   - The **Testing Team** performs UAT based on the test plan to validate the release candidate. They create and execute test plans to ensure the software meets the business requirements.
+   - The **Testing Team** performs UAT based on the test plan to validate the release. They create and execute test plans to ensure the software meets the business requirements.
 6. **Approval or Rollback**:
-   - If the UAT passes, the release candidate is approved for production.
-   - If issues arise, the team addresses the issues in the development environment and re-tests the release.
+   - If the UAT passes, the release is approved for production.
+   - If issues arise, the release branch is updated, and the deployment is re-triggered.
 
 #### Who is involved:
 
-- **Developers**: Responsible for creating the release candidate, deploying it to the test environment, and fixing any issues discovered during testing.
+- **Developers**: Responsible for creating the release, deploying it to the test environment, and fixing any issues discovered during testing.
 - **Testing Team**: Responsible for creating the UAT plan, conducting the UAT, and reporting any issues that need resolution.
-- **Stakeholders**: May participate in reviewing the results of UAT and provide feedback or approval for the release candidate.
+- **Stakeholders**: May participate in reviewing the results of UAT and provide feedback or approval for the release.
 
 ---
 
 ### 3. Deployment to Production Environment
 
-Deployments to the **production environment** are triggered manually after a release candidate has passed all tests and UAT in the test environment.
+Deployments to the **production environment** are triggered manually after the release branch has passed all tests and UAT in the test environment.
 
 #### Steps:
 
-1. **Create a Production Release**: Once UAT is complete, the release candidate is finalized, and a production release is created and tagged in GitHub. Further details can be found in the [Release Process](release-process.md) guidance.
-2. **Trigger the Production Deployment**: The deployment is triggered manually via GitHub Actions.
+1. **Tag the Release**: Once UAT is complete, the release branch is tagged as a production release (e.g., `v1.1.0`). Further details can be found in the [Release Process](release-process.md) guidance.
+2. **Trigger the Production Deployment**: The deployment is triggered via GitHub Actions.
 3. **AWS CDK Deployment**:
    - The pipeline assumes an AWS role for the **production account**.
    - AWS CDK provisions the infrastructure and deploys the release to production via CloudFormation.
@@ -127,7 +127,7 @@ In case of issues during deployment, follow the rollback mechanism described in 
 
 - **Trigger Development Deployments**: Automatically triggered when merging pull requests.
 - **Monitor Development Environment**: Ensure that development deployments are functioning as expected.
-- **Draft Release Candidates**: When code is stable, create release candidates for testing.
+- **Create Release**: When code is stable, create release for testing.
 - **Manage Test and Production Deployments**: Oversee deployments to test and production environments.
 - **Fix Issues**: Resolve any issues that occur during testing, UAT, or production deployment.
 - **Manage Rollbacks**: Handle any necessary rollbacks in the event of a deployment failure.
@@ -135,7 +135,7 @@ In case of issues during deployment, follow the rollback mechanism described in 
 ### Testing Team
 
 - **Create UAT Test Plans**: Develop and execute test plans to ensure the software meets business requirements.
-- **Conduct UAT**: Perform testing during UAT to validate the release candidate in the test environment.
+- **Conduct UAT**: Perform testing during UAT to validate the release in the test environment.
 - **Report Issues**: Provide detailed feedback on any issues found during UAT for the developers to resolve.
 
 ### Stakeholders

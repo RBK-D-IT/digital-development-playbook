@@ -2,7 +2,7 @@
 
 ## Overview
 
-Our team follows **GitHub Flow** as our primary branching strategy. GitHub Flow is a simple and flexible workflow that encourages frequent collaboration and continuous integration. Code is developed in branches, tested, and merged into the `main` branch, which triggers a deployment to the **development (dev) environment**.
+Our team follows a modified version of **GitHub Flow** as our primary branching strategy, which integrates **release branches** to manage production readiness and releases more effectively. This strategy encourages frequent collaboration and continuous integration, with **feature branches** for development, **release branches** for preparing production releases, and deployments managed through GitHub and CI/CD pipelines.
 
 ## Key Concepts
 
@@ -29,9 +29,16 @@ Our team follows **GitHub Flow** as our primary branching strategy. GitHub Flow 
    - After a pull request is approved and all tests pass, the feature branch is merged into the `main` branch.
    - Merging to `main` triggers an automatic deployment to the **development environment** for internal testing and iteration.
 
-5. **Release Process**:
-   - The code in `main` becomes **production-ready** only after it has passed testing in the **test environment** and a **release candidate** has been approved.
-   - Once a release candidate is finalized, it is tagged as a **production release** and deployed to the **production environment**.
+5. **Release Branches**:
+
+   - When the code in `main` is considered stable and ready for further testing, a release branch is created.
+   - The release branch isolates the version of the code that is intended for production, allowing ongoing work in `main` without affecting the release.
+   - Example release branch naming convention: `release/v1.1.0`.
+   - The release branch undergoes thorough testing in the **test environment**, including **User Acceptance Testing (UAT)**, before being tagged for production.
+
+6. **Release Process**:
+   - The code in `main` becomes **production-ready** only after it has passed testing in the **test environment** via promotion to a **release branch**.
+   - If the release branch passes all tests, it is tagged as a **production release** and deployed to the **production environment**.
    - For details on the release and deployment process, refer to the [Deployment Process](../devops-and-automation/deployment-process.md) document.
 
 ## Workflow Example
@@ -65,5 +72,5 @@ Our team follows **GitHub Flow** as our primary branching strategy. GitHub Flow 
    - This will trigger an automatic deployment to the **development environment**.
 
 6. **Create a Release**:
-   - Once the code in `main` is stable and ready for production, follow the release process to create a release candidate and deploy it to **test** and eventually **production**.
+   - Once the code in `main` is stable and ready for production, follow the release process to create a release and deploy it to **test** and eventually **production**.
    - For detailed instructions on creating releases, see the [Release Process](../devops-and-automation/release-process.md).

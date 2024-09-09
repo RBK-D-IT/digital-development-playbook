@@ -55,27 +55,26 @@ This stage ensures that all code changes are continuously integrated into the sy
 
 ---
 
-### 4. Create a Release Candidate
+### 4. Create a Release
 
-After the development environment passes all tests, a release candidate is created and prepared for deployment to the **test environment**.
+After the development environment passes all tests, a release branch is created and prepared for deployment to the **test environment**.
 
 - **Key Activities**:
-  - Draft a release candidate on GitHub.
-  - Tag the release and set it as a pre-release for further testing.
-  - Publish the release candidate for deployment in the test environment.
+  - Create a release branch.
+  - Name the branch using **semantic versioning** (e.g., `release/v1.0.0`).
 
-The release candidate serves as a version of the application that is ready for testing, ensuring that it meets the necessary quality and functional requirements.
+The release serves as a version of the application that is ready for testing, ensuring that it meets the necessary quality and functional requirements.
 
 ---
 
 ### 5. Testing and Deployment to Test Environment
 
-Once a release candidate is ready, it’s deployed to the **test environment** for thorough validation, including **User Acceptance Testing (UAT)**.
+Once a release is ready, it’s deployed to the **test environment** for thorough validation, including **User Acceptance Testing (UAT)**.
 
 - **Key Activities**:
-  - Deploy the release candidate to the test environment using AWS CDK and CloudFormation.
+  - Deploy the release to the test environment using AWS CDK and CloudFormation.
   - Run integration and smoke tests in the test environment to validate the deployment.
-  - **UAT**: The testing team and stakeholders validate the release candidate to ensure it meets business requirements.
+  - **UAT**: The testing team and stakeholders validate the release to ensure it meets business requirements.
   - If any issues arise during testing, changes are sent back to development for fixes and re-deployment.
 
 This stage ensures that the application is tested in an environment that closely mirrors production, reducing the risk of issues in production.
@@ -84,10 +83,10 @@ This stage ensures that the application is tested in an environment that closely
 
 ### 6. Deployment to Production
 
-Once the release candidate has passed testing, it is prepared for deployment to the **production environment**.
+Once the release has passed testing, it is prepared for deployment to the **production environment**.
 
 - **Key Activities**:
-  - Create a production release by finalizing the release candidate in GitHub and tagging it for production deployment.
+  - Promote the release to production by tagging it for production deployment.
   - Deploy the application to production using AWS CDK and CloudFormation.
   - Run post-deployment **smoke tests** to ensure the application is functioning correctly in the production environment.
 
@@ -101,6 +100,7 @@ After deployment to production, the application is continuously monitored to ens
 
 - **Key Activities**:
   - Use AWS CloudWatch to monitor application performance, detect any potential issues, and set up alerts for critical errors.
+  - Merge the release branch into `main` so any changes made during UAT are synced.
   - If any issues arise, the development team can roll back to a previous stable version or issue hotfixes.
   - Sprint tickets are closed, and feedback from stakeholders is gathered for future iterations.
 
