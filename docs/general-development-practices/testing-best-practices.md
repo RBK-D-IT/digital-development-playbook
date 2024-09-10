@@ -8,6 +8,8 @@ sidebar_position: 6
 
 Testing is essential to ensure the quality, stability, and maintainability of our codebase. This document outlines the best practices for writing and maintaining tests, covering unit tests, integration tests, and end-to-end (E2E) tests. The goal is to catch bugs early, ensure code correctness, and maintain a high level of confidence in our applications.
 
+---
+
 ## Types of Tests
 
 1. **Unit Tests**:
@@ -26,6 +28,8 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
    - Simulate real-world user interactions with the system.
    - Test the entire system from the user interface to the backend, including all key workflows.
    - Use E2E tests to validate the user experience and critical business processes.
+
+---
 
 ## Testing Guidelines
 
@@ -90,11 +94,15 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
 - When a bug is discovered, write a **test case** that reproduces the issue before fixing it. This ensures that the bug is covered by tests and helps prevent regressions.
 - Cover **edge cases** in your tests, such as null inputs, invalid data, and boundary conditions, to make your code more robust.
 
+---
+
 ## Tools and Frameworks
 
 - Use appropriate testing frameworks and tools for the language or platform you are working with (e.g., xUnit, JUnit, Mocha, etc.).
 - Choose mocking frameworks or tools that fit well with your project and make testing external dependencies easier (e.g., Moq, Mockito, Sinon, etc.).
 - For end-to-end testing, use tools that simulate user interactions with your application (e.g., Selenium, Cypress, Playwright, etc.).
+
+---
 
 ## Test Structure and Organization
 
@@ -114,6 +122,8 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
    test_should_return_user_data_for_valid_user_id
    ```
 
+---
+
 ## Continuous Integration (CI) and Test Automation
 
 - All tests are run automatically in the CI pipeline for every pull request.
@@ -121,6 +131,8 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
   - All tests pass successfully.
   - Adequate test coverage is maintained.
 - Run tests in parallel where possible to optimize for speed, especially for end-to-end tests.
+
+---
 
 ## Testing in Different Environments
 

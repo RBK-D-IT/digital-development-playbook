@@ -4,7 +4,8 @@ sidebar_position: 2
 
 # Release Process
 
-**Overview**:  
+## Overview
+
 Our release process ensures that code is properly tested and validated before deployment to production. It includes creating **release candidates**, managing **production releases**, and implementing a **rollback strategy** to maintain application stability.
 
 ## 1. Create Release for Testing

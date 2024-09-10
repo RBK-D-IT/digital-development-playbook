@@ -8,6 +8,8 @@ sidebar_position: 5
 
 Code reviews are a critical part of our development workflow, ensuring code quality, consistency, and sharing of knowledge across the team. Every pull request (PR) must be reviewed and approved before being merged into the `main` branch. The review process helps catch bugs, improve design, and ensure maintainability.
 
+---
+
 ## Code Review Workflow
 
 1. **Submit a Pull Request**:
@@ -45,6 +47,8 @@ Code reviews are a critical part of our development workflow, ensuring code qual
      - Integration tests
      - Linting (e.g., ESLint, Pylint)
      - Any other configured tests (e.g., end-to-end tests)
+
+---
 
 ## Code Review Guidelines
 
@@ -93,6 +97,8 @@ Code reviews are a critical part of our development workflow, ensuring code qual
 
 5. **Ensure All Tests Pass**:
    - Run all applicable tests locally before pushing your branch to GitHub. Ensure that automated tests pass as well before requesting a review.
+
+---
 
 ## Merge Strategy
 

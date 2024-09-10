@@ -16,7 +16,7 @@ The diagram below provides a visual representation of the SDLC stages our team f
 
 ## SDLC Stages
 
-### 1. Pre-Development
+1. **Pre-Development**
 
 The pre-development stage focuses on **gathering requirements** and defining the scope of the project before actual development work begins.
 
@@ -28,9 +28,7 @@ The pre-development stage focuses on **gathering requirements** and defining the
 
 This stage ensures that the project is properly scoped, and that all stakeholders are aligned on the goals before development begins.
 
----
-
-### 2. Local Development Environment
+2. **Local Development Environment**
 
 Once the project is defined, development begins in a local environment. This is where the bulk of coding, testing, and iteration occurs.
 
@@ -42,9 +40,7 @@ Once the project is defined, development begins in a local environment. This is 
 
 During this stage, developers create and refine their code while continuously testing to ensure quality and adherence to best practices.
 
----
-
-### 3. Continuous Integration (CI) and Development Pipeline
+3. **Continuous Integration (CI) and Development Pipeline**
 
 The CI pipeline automates the deployment of code to the **development environment** and runs automated tests to ensure that the code is functional and stable.
 
@@ -57,9 +53,7 @@ The CI pipeline automates the deployment of code to the **development environmen
 
 This stage ensures that all code changes are continuously integrated into the system and validated with automated testing, reducing the risk of errors later in the process.
 
----
-
-### 4. Create a Release
+4. **Create a Release**
 
 After the development environment passes all tests, a release branch is created and prepared for deployment to the **test environment**.
 
@@ -69,9 +63,7 @@ After the development environment passes all tests, a release branch is created 
 
 The release serves as a version of the application that is ready for testing, ensuring that it meets the necessary quality and functional requirements.
 
----
-
-### 5. Testing and Deployment to Test Environment
+5. **Testing and Deployment to Test Environment**
 
 Once a release is ready, it’s deployed to the **test environment** for thorough validation, including **User Acceptance Testing (UAT)**.
 
@@ -83,9 +75,7 @@ Once a release is ready, it’s deployed to the **test environment** for thoroug
 
 This stage ensures that the application is tested in an environment that closely mirrors production, reducing the risk of issues in production.
 
----
-
-### 6. Deployment to Production
+6. **Deployment to Production**
 
 Once the release has passed testing, it is prepared for deployment to the **production environment**.
 
@@ -96,9 +86,7 @@ Once the release has passed testing, it is prepared for deployment to the **prod
 
 At this stage, the application goes live, and users can begin interacting with it.
 
----
-
-### 7. Post-Production Monitoring and Feedback
+7. **Post-Production Monitoring and Feedback**
 
 After deployment to production, the application is continuously monitored to ensure stability, performance, and reliability.
 

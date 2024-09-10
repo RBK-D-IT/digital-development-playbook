@@ -10,6 +10,8 @@ Our team follows a modified version of **GitHub Flow** as our primary branching 
 
 ![Branching Strategy Diagram](./img/branching-workflow.png)
 
+---
+
 ## Key Concepts
 
 1. **`main` Branch**:
@@ -46,6 +48,8 @@ Our team follows a modified version of **GitHub Flow** as our primary branching 
    - The code in `main` becomes **production-ready** only after it has passed testing in the **test environment** via promotion to a **release branch**.
    - If the release branch passes all tests, it is tagged as a **production release** and deployed to the **production environment**.
    - For details on the release and deployment process, refer to the [Deployment Process](../devops-and-automation/deployment-process.md) document.
+
+---
 
 ## Workflow Example
 

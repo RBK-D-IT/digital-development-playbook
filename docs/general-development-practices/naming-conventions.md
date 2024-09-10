@@ -4,6 +4,8 @@ sidebar_position: 3
 
 # Naming Conventions
 
+## Overview
+
 This document outlines the **naming conventions** that our team follows across various aspects of development to ensure consistency, clarity, and maintainability. These guidelines apply to GitHub repositories, AWS resources, APIs, and other key components.
 
 ---
@@ -78,8 +80,6 @@ Consistent naming in AWS resources helps to quickly identify the purpose and env
 - **Prefix** resource names with the **environment** (`dev`, `test`, `prod`) to easily identify where resources are deployed.
 - Include the **service type** in the name (e.g., `lambda`, `s3`, `iam`).
 - Keep names **short** but **descriptive**.
-
----
 
 **IAM Roles and Policies**
 

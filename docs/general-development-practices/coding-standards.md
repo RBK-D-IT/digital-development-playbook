@@ -4,6 +4,8 @@
 
 To maintain consistency and readability across our codebase, we follow these coding standards for all projects. These standards apply to all programming languages used within the team (e.g., C#, Python, etc.).
 
+---
+
 ## General Guidelines
 
 1. **Consistency**:
@@ -27,6 +29,8 @@ To maintain consistency and readability across our codebase, we follow these cod
      // Add 1 to counter
      counter += 1;
      ```
+
+---
 
 ## Commit Message Standards (Conventional Commits)
 
