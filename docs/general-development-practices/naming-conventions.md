@@ -12,7 +12,7 @@ This document outlines the **naming conventions** that our team follows across v
 
 All GitHub repositories must follow a consistent naming convention to improve organization and clarity. The following rules apply to all **GitHub repositories**.
 
-### Repository Naming Convention Structure
+**Repository Naming Convention Structure**
 
 digital-[project-type]-[project-name]-[optional-context]
 
@@ -20,7 +20,7 @@ digital-[project-type]-[project-name]-[optional-context]
 - `[project-name]`: A descriptive name for the project.
 - `[optional-context]`: (Optional) Further context if required to clarify the purpose of the repository.
 
-### Project Types
+**Project Types**
 
 1. **API Projects:** `digital-api-[project-name]`
 2. **Application Projects:** `digital-app-[project-name]`
@@ -30,7 +30,7 @@ digital-[project-type]-[project-name]-[optional-context]
 6. **Tool Projects:** `digital-tool-[project-name]`
 7. **Template/Example Projects:** `digital-template-[project-type]-[context]`
 
-### Examples of Each Project Type
+**Examples of Each Project Type**
 
 1. **API Projects:**
 
@@ -72,7 +72,7 @@ digital-[project-type]-[project-name]-[optional-context]
 
 Consistent naming in AWS resources helps to quickly identify the purpose and environment of resources. The following conventions apply to common AWS services such as **IAM roles**, **Lambda functions**, and **S3 buckets**.
 
-### General Guidelines:
+**General Guidelines**:
 
 - Use **lowercase letters**, numbers, and **hyphens** (`-`) to separate words.
 - **Prefix** resource names with the **environment** (`dev`, `test`, `prod`) to easily identify where resources are deployed.
@@ -81,11 +81,11 @@ Consistent naming in AWS resources helps to quickly identify the purpose and env
 
 ---
 
-### IAM Roles and Policies
+**IAM Roles and Policies**
 
 IAM roles and policies must follow a consistent naming convention to improve clarity and maintainability. The format for IAM roles and policies is as follows:
 
-#### Format:
+**Format**:
 
 Digital-[purpose]-[Role|RolePolicy]
 
@@ -93,54 +93,54 @@ Digital-[purpose]-[Role|RolePolicy]
 - `[purpose]`: A descriptive term for the function of the role (e.g., `APILambdaDeployment`, `S3BackupManagement`).
 - `[Role | RolePolicy]`: Ends with either `Role` or `RolePolicy` depending on whether it's a role or a policy.
 
-#### Examples:
+**Examples**:
 
 - **IAM Role**: `Digital-APILambdaDeploymentRole`
 - **IAM Role Policy**: `Digital-APILambdaDeploymentRolePolicy`
 
-### Lambda Functions
+**Lambda Functions**
 
 Lambda function names follow a consistent pattern based on the **project name** and **function name**, ensuring clarity in identifying what each function does and to which project it belongs.
 
-#### Format:
+**Format**:
 
 [project-name]-[function-name]
 
 - `[project-name]`: The name of the project, representing the overall service or functionality.
 - `[function-name]`: The specific name of the Lambda function, based on its purpose or the functionality it provides.
 
-#### Examples:
+**Examples**:
 
 - `BaseAPI-GetSystemStatus`
 - `WasteAPI-AddUser`
 
-### API Gateway (AWS)
+**API Gateway (AWS)**
 
 The **API Gateway** is responsible for managing and routing API requests to Lambda functions. In the **AWS infrastructure context**, we focus on how the **API Gateway** is named and structured.
 
-#### API Gateway Naming Convention:
+**API Gateway Naming Convention**:
 
 [project-name]Api
 
 - `[project-name]`: The name of the project or service.
 
-#### Resource Path Naming:
+**Resource Path Naming**:
 
 /api/[resource-path]
 
 - `/api/`: Base path for all API resources.
 - `[resource-path]`: Path based on the function and the resource being accessed.
 
-#### Examples:
+**Examples**:
 
 - **API Gateway Name**: `user-managementApi`
 - **API Gateway Resource Path**: `/api/create-user`, `/api/orders/get-order`
 
-#### API Gateway Stage Names:
+**API Gateway Stage Names**:
 
 The stage name is based on the environment (e.g., `dev`, `test`, `prod`).
 
-#### Examples:
+**Examples**:
 
 - **Stage Names**: `development`, `production`
 
@@ -150,21 +150,21 @@ The stage name is based on the environment (e.g., `dev`, `test`, `prod`).
 
 In this section, we focus on how to design and structure **API endpoints**, independent of the AWS infrastructure. This covers how APIs should be named and accessed from a development perspective.
 
-### General Guidelines:
+**General Guidelines**:
 
 - Use **nouns** to represent resources (e.g., `users`, `orders`).
 - Use **HTTP methods** (GET, POST, PUT, DELETE) to indicate the action being performed.
 - Use **lowercase letters** and **hyphens** (`-`) in URLs.
 - Keep URLs short and descriptive.
 
-### URL Structure:
+**URL Structure**:
 
 /api/[resource-name]/[resource-id] (for individual resources) /api/[resource-name] (for collections)
 
 - `[resource-name]`: The resource being accessed (e.g., `users`, `orders`).
 - `[resource-id]`: The unique identifier for individual resources (when applicable).
 
-### Examples:
+**Examples**:
 
 - **Get all users**: `GET /api/users`
 - **Get a single user**: `GET /api/users/[userId]`

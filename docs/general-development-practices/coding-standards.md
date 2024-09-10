@@ -32,7 +32,7 @@ To maintain consistency and readability across our codebase, we follow these cod
 
 We follow the **Conventional Commits** specification for commit messages. This ensures that our commit history is structured, easy to understand, and helps with automating semantic versioning and changelog generation.
 
-### Conventional Commits Format
+**Conventional Commits Format**
 
 Each commit message should include a **type**, an optional **scope**, and a **short description** of the change. If applicable, the issue ticket reference should also be included. Optionally, you can also include a body and footer for more details.
 
@@ -44,7 +44,7 @@ Each commit message should include a **type**, an optional **scope**, and a **sh
 [optional footer]
 ```
 
-### Commit Types
+**Commit Types**
 
 - **feat**: A new feature for the user.
 - **fix**: A bug fix.
@@ -57,14 +57,14 @@ Each commit message should include a **type**, an optional **scope**, and a **sh
 - **build**: Changes that affect the build system or dependencies.
 - **ci**: Changes to our CI/CD pipeline or configuration.
 
-### Examples of Conventional Commit Messages
+**Examples of Conventional Commit Messages**
 
 - `feat(login): add remember me functionality (AB-123)`
 - `fix(auth): correct user authentication flow (CD-456)`
 - `docs(readme): update API documentation`
 - `refactor(user-model): improve user data structure`
 
-### Commit Message Guidelines
+**Commit Message Guidelines**
 
 1. **Commit Early and Often**:
    - Each commit should represent a small, logical change that can be independently reviewed.

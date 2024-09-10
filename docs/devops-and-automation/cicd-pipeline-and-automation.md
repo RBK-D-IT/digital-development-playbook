@@ -22,7 +22,7 @@ The main stages in our CI/CD pipeline include:
 
 Once a feature or bug fix is developed and pushed to a branch in GitHub, the **CI pipeline** is automatically triggered by GitHub Actions.
 
-#### Steps in the CI Stage:
+**Steps in the CI Stage**:
 
 - **Build**: The application is built, compiled, or packaged as needed.
 - **Automated Testing**:
@@ -31,7 +31,7 @@ Once a feature or bug fix is developed and pushed to a branch in GitHub, the **C
   - **End-to-End (E2E) Tests**: Simulate user workflows to ensure critical paths function as expected.
 - **Code Linting**: Check the codebase for stylistic consistency and adherence to coding standards.
 
-#### Development Environment Deployment:
+**Development Environment Deployment**:
 
 - **AWS CDK Deployment**: Once tests pass, the code is automatically deployed to the **development environment** using **AWS CDK** to manage the infrastructure as code.
 - **Assume AWS Role**: The pipeline assumes the appropriate AWS role for the **development account** to deploy the infrastructure and application.
@@ -45,7 +45,7 @@ If any step fails, the pipeline notifies the developer, who can make the necessa
 
 Once the code is stable and passes all CI checks, a **release branch** is created to isolate code changes and prepare the release for further testing and deployment to the **test environment**.
 
-#### Steps in Release Management:
+**Steps in Release Management**:
 
 - **Create a Release Branch**: A new release branch (e.g., `release/v1.1.0`) is created from `main` to isolate the release.
 - **Deploy to Test**:
@@ -62,7 +62,7 @@ If issues are found during UAT, fixes are made directly in the release branch an
 
 After the release branch passes UAT in the test environment, it is tagged and deployed to the **production environment**.
 
-#### Steps in the CD Stage:
+**Steps in the CD Stage**:
 
 - **Tag the Release**: Once approved, a production release tag (e.g., `v1.1.0`) is created from the release branch.
 - **Deploy to Production**:

@@ -14,19 +14,19 @@ This document outlines how we use **AWS CDK** and **AWS CloudFormation** to defi
 
 ## Key Principles of IaC
 
-### 1. **Consistency**
+1. **Consistency**
 
 - Using IaC ensures that infrastructure across development, test, and production environments is consistent. We define the same infrastructure components (e.g., compute, networking, databases) across all environments, reducing human error.
 
-### 2. **Version Control**
+2. **Version Control**
 
 - All infrastructure code is stored in **GitHub** alongside our application code. This ensures that infrastructure changes can be tracked, reviewed, and rolled back if necessary, just like any other code change.
 
-### 3. **Automation**
+3. **Automation**
 
 - Infrastructure provisioning and updates are fully automated through the CI/CD pipeline using **GitHub Actions** and IaC tools like **AWS CDK** and **AWS CloudFormation**. This reduces the need for manual intervention and speeds up deployment cycles.
 
-### 4. **Scalability**
+4. **Scalability**
 
 - IaC enables the ability to scale infrastructure easily. By modifying the infrastructure code, we can automatically adjust resources (e.g., increase or decrease the number of servers, storage capacity, etc.) based on the application's needs.
 
@@ -34,7 +34,7 @@ This document outlines how we use **AWS CDK** and **AWS CloudFormation** to defi
 
 ## Tools and Technologies
 
-### 1. **AWS Cloud Development Kit (CDK)**
+1. **AWS Cloud Development Kit (CDK)**
 
 We use **AWS CDK** as our primary tool for defining and managing infrastructure in AWS. CDK allows us to define infrastructure using familiar programming languages (e.g., C#), which then generates AWS CloudFormation templates to provision resources.
 
@@ -43,7 +43,7 @@ We use **AWS CDK** as our primary tool for defining and managing infrastructure 
   - **Reusable Components**: CDK allows us to define reusable infrastructure components, making it easy to scale infrastructure across different environments.
   - **Multi-Environment Support**: Easily manage infrastructure for development, test, and production environments by passing environment-specific configurations.
 
-### 2. **AWS CloudFormation**
+2. **AWS CloudFormation**
 
 While **AWS CDK** is used to write infrastructure code, **AWS CloudFormation** is the underlying service that provisions and manages AWS resources. CDK generates CloudFormation templates, which are then used to deploy infrastructure resources in AWS.
 
@@ -55,19 +55,19 @@ While **AWS CDK** is used to write infrastructure code, **AWS CloudFormation** i
 
 ## IaC Workflow
 
-### 1. Infrastructure Code in GitHub
+1. **Infrastructure Code in GitHub**
 
 - All infrastructure code (written in AWS CDK) is stored in **GitHub**, alongside our application code. This ensures that any changes to infrastructure go through the same version control and code review process as the application code.
 - Developers can submit pull requests (PRs) with infrastructure changes, which are reviewed before being merged into the `main` branch.
 
-### 2. Automated Infrastructure Deployment
+2. **Automated Infrastructure Deployment**
 
 - When infrastructure changes are merged into the `main` branch, the CI/CD pipeline (using **GitHub Actions**) is triggered to deploy the infrastructure changes automatically.
   - **Development Environment**: Infrastructure changes are first deployed to the **development environment** for internal testing.
   - **Test Environment**: Once validated, infrastructure changes are promoted to the **test environment** during the release candidate process.
   - **Production Environment**: After UAT, infrastructure changes are deployed to the **production environment**.
 
-### 3. Deployment Process
+3. **Deployment Process**
 
 For every environment (development, test, production), the following steps are followed:
 
@@ -115,27 +115,27 @@ Each environment (development, test, production) may have different infrastructu
 
 ## Best Practices for IaC
 
-### 1. Use Version Control for Infrastructure
+1. **Use Version Control for Infrastructure**
 
 - All infrastructure code must be stored in **GitHub** alongside application code.
 - Changes to infrastructure must go through the same PR review process as application code to ensure consistency and avoid misconfigurations.
 
-### 2. Modularize Infrastructure
+2. **Modularize Infrastructure**
 
 - Use **modular components** in AWS CDK to reuse infrastructure definitions across different environments and applications.
 - Modularizing infrastructure code makes it easier to manage and scale infrastructure resources.
 
-### 3. Test Infrastructure Changes
+3. **Test Infrastructure Changes**
 
 - Before applying infrastructure changes to the **test** or **production** environments, test them thoroughly in the **development** environment.
 - Run smoke tests and automated tests to ensure the infrastructure is functioning as expected.
 
-### 4. Automate Rollbacks
+4. **Automate Rollbacks**
 
 - Enable automatic rollbacks in **CloudFormation** to revert infrastructure changes if something fails during deployment.
 - Use monitoring tools to detect failures early and trigger rollbacks when necessary.
 
-### 5. Securely Manage Secrets
+5. **Securely Manage Secrets**
 
 - Use **AWS Secrets Manager**, **AWS Systems Manager Parameter Store** or **Azure Key Vault** to securely store and retrieve sensitive data like API keys, credentials, and database passwords during infrastructure provisioning.
 - Avoid hardcoding secrets in the infrastructure code.
@@ -146,17 +146,17 @@ Each environment (development, test, production) may have different infrastructu
 
 After infrastructure has been provisioned, it is important to monitor and maintain the resources to ensure they operate efficiently.
 
-### 1. Monitoring
+1. **Monitoring**
 
 - Use **AWS CloudWatch** to monitor the health, performance, and utilization of AWS resources.
 - Set up alarms to notify the team if there are any issues (e.g., high CPU usage, memory leaks, low disk space).
 
-### 2. Cost Management
+2. **Cost Management**
 
 - Regularly review the cost of infrastructure resources.
 - Use **AWS Cost Explorer** to monitor AWS usage and identify potential cost-saving opportunities (e.g., scaling down unused resources in non-production environments).
 
-### 3. Infrastructure Updates
+3. **Infrastructure Updates**
 
 - Ensure that infrastructure resources are regularly updated to take advantage of new features and security improvements.
 - AWS CDK and CloudFormation make it easy to update resources through code.

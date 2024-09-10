@@ -43,7 +43,7 @@ This diagram visually represents the flow of deployment tasks, which are describ
 
 Deployments to the **development environment** are triggered automatically through the CI pipeline whenever changes are merged into the `main` branch.
 
-#### Steps:
+**Steps**:
 
 1. **Trigger**: After a pull request (PR) is merged into `main`, the GitHub Actions pipeline is triggered.
 2. **Build and Test**: The application is built, and all tests (unit, integration, E2E) are run.
@@ -53,7 +53,7 @@ Deployments to the **development environment** are triggered automatically throu
 4. **Smoke Testing**: Basic smoke tests are run in the development environment to ensure the deployment was successful.
 5. **Feedback**: If the deployment or tests fail, feedback is provided to the development team for further action.
 
-#### Who is involved:
+**Who is involved**:
 
 - **Developers**: Responsible for managing the CI/CD pipeline, monitoring the deployment process, and resolving any issues that arise during deployment or testing.
 
@@ -63,7 +63,7 @@ Deployments to the **development environment** are triggered automatically throu
 
 Deployments to the **test environment** are triggered manually when a release branch is ready for testing.
 
-#### Steps:
+**Steps**:
 
 1. **Create a Release Branch**: The development team creates a release branch from `main`. Further details can be found in the [Release Process](release-process.md) guidance.
 2. **Trigger the Test Deployment**: Once the release branch is created, a deployment to the test environment is triggered via GitHub Actions.
@@ -78,7 +78,7 @@ Deployments to the **test environment** are triggered manually when a release br
    - If the UAT passes, the release is approved for production.
    - If issues arise, the release branch is updated, and the deployment is re-triggered.
 
-#### Who is involved:
+**Who is involved**:
 
 - **Developers**: Responsible for creating the release, deploying it to the test environment, and fixing any issues discovered during testing.
 - **Testing Team**: Responsible for creating the UAT plan, conducting the UAT, and reporting any issues that need resolution.
@@ -90,7 +90,7 @@ Deployments to the **test environment** are triggered manually when a release br
 
 Deployments to the **production environment** are triggered manually after the release branch has passed all tests and UAT in the test environment.
 
-#### Steps:
+**Steps**:
 
 1. **Tag the Release**: Once UAT is complete, the release branch is tagged as a production release (e.g., `v1.1.0`). Further details can be found in the [Release Process](release-process.md) guidance.
 2. **Trigger the Production Deployment**: The deployment is triggered via GitHub Actions.
@@ -104,7 +104,7 @@ Deployments to the **production environment** are triggered manually after the r
 6. **Rollback Mechanism**:
    - If any critical issues are detected in production, the deployment is rolled back to the previous stable version automatically using AWS CloudFormation.
 
-#### Who is involved:
+**Who is involved**:
 
 - **Developers**: Manage the production deployment process, monitor the system post-deployment, and address any issues that arise during or after deployment.
 - **Testing Team**: May assist in validating the final release, ensuring it matches the UAT expectations.
