@@ -4,6 +4,8 @@
 
 Our team follows a modified version of **GitHub Flow** as our primary branching strategy, which integrates **release branches** to manage production readiness and releases more effectively. This strategy encourages frequent collaboration and continuous integration, with **feature branches** for development, **release branches** for preparing production releases, and deployments managed through GitHub and CI/CD pipelines.
 
+![Branching Strategy Diagram](./img/branching-workflow.png)
+
 ## Key Concepts
 
 1. **`main` Branch**:
