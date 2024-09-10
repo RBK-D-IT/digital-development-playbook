@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Code Review Process and Standards
 
 ## Overview

@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # API Standards and Guidelines
 
 This document provides the **standards** and **guidelines** that our team follows when developing APIs. By adhering to these practices, we ensure consistency, scalability, and maintainability in our APIs. These guidelines cover API structure, naming conventions, authentication, error handling, and documentation practices.

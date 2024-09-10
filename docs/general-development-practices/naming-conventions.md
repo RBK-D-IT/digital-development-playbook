@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Naming Conventions
 
 This document outlines the **naming conventions** that our team follows across various aspects of development to ensure consistency, clarity, and maintainability. These guidelines apply to GitHub repositories, AWS resources, APIs, and other key components.

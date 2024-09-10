@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Branching Strategy and Git Workflow
 
 ## Overview
