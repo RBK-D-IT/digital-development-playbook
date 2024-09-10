@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # CI/CD Pipeline and Automation
 
 ## Overview

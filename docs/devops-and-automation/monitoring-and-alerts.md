@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Monitoring and Alerts
 
 ## Overview
