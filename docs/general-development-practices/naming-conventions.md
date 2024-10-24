@@ -70,7 +70,28 @@ digital-[project-type]-[project-name]-[optional-context]
 
 ---
 
-## 2. AWS Resource Naming Conventions
+## 2. Git Branch and Commit Naming Conventions
+
+Branch names should clearly indicate the type of work being done. They are structured to quickly convey the purpose of the branch and help organize tasks. While similar to conventional commit types, branch naming is broader and identifies a set of changes rather than individual updates. If applicable, the issue ticket reference should be prefixed to the branch name to ensure easy tracking between the code and the associated task or issue.
+
+**Branch Naming Format**:
+
+- `feature/`: For new features or enhancements. Examples: `feature/AB-123-add-login-page`, `feature/add-user-profile`
+- `bugfix/`: For resolving bugs. Examples: `bugfix/AB-456-fix-header-alignment`, `bugfix/address-memory-leak`
+- `hotfix/`: For urgent production fixes. Examples: `hotfix/critical-security-fix`, `hotfix/security-patch`
+- `task/`: For all other tasks, including maintenance, refactoring, updates, and documentation. Examples: `task/AB-789-update-dependencies`, `task/refactor-auth-module`
+
+By using these four prefixes, we ensure that branches are easy to understand and manage without overcomplicating the naming process.
+
+**Commit Naming (Conventional Commits) Format**:
+
+- For consistency, all commit messages should follow the Conventional Commits format.
+- This structure helps to automate versioning, changelogs, and makes it easier to understand the purpose of each change.
+- For more details on how to write proper commit messages, see the [Coding Standards](coding-standards.md#commit-message-standards-conventional-commits) page.
+
+---
+
+## 3. AWS Resource Naming Conventions
 
 Consistent naming in AWS resources helps to quickly identify the purpose and environment of resources. The following conventions apply to common AWS services such as **IAM roles**, **Lambda functions**, and **S3 buckets**.
 
@@ -146,7 +167,7 @@ The stage name is based on the environment (e.g., `dev`, `test`, `prod`).
 
 ---
 
-## 3. API Design Naming Conventions
+## 4. API Design Naming Conventions
 
 In this section, we focus on how to design and structure **API endpoints**, independent of the AWS infrastructure. This covers how APIs should be named and accessed from a development perspective.
 

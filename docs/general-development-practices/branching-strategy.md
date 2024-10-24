@@ -23,7 +23,7 @@ Our team follows a modified version of **GitHub Flow** as our primary branching 
 2. **Feature Branches**:
 
    - Each new feature or bug fix is developed in a separate branch created off of `main`.
-   - Feature branches should be named descriptively, including an issue ticket reference if applicable (e.g., `feature/AB-123-web-content-updates`, `feature/login-page` or `bugfix/fix-header-alignment`).
+   - Feature branches should be named descriptively, including an issue ticket reference if applicable. For more details on how branches should be named, see the [Naming Conventions](naming-conventions.md#2-git-branch-and-commit-naming-conventions) page.
    - All changes are tested locally or in feature-specific environments before being merged into `main`.
 
 3. **Pull Requests (PRs)**:
