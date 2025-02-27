@@ -97,10 +97,42 @@ Consistent naming in AWS resources helps to quickly identify the purpose and env
 
 **General Guidelines**:
 
+The following conventions apply unless there are explicit guidelines for resource types:
+
 - Use lowercase letters, numbers, and hyphens (`-`) to separate words.
-- Prefix resource names with the environment (`dev`, `test`, `prod`) to easily identify where resources are deployed.
 - Include the service type in the name (e.g., `lambda`, `s3`, `iam`).
 - Keep names short but descriptive.
+
+**Parameter Store**
+
+Parameters are stored using a group/path convention, as follows:
+
+**Format**:
+
+`/[parameter-group]/[parameter-path]`
+
+- `/[parameter-group]`: The group the parameter belongs to (either application specific, e.g., `digital-api-waste-notifications`, or global e.g., `system`, `application`).
+- `[parameter-path]`: The path of the parameter (e.g., `tagging/common/global`, `domain/digital-public`, `s3/file-path`).
+
+**Examples**:
+
+`/system/domain/digital-public`
+`/digital-api-waste-notifications/storage/s3-bucket-path`
+
+**Secrets Manager**
+
+Similar to the parameter store, secrets are stored in a similar convention:
+
+**Format**:
+
+`/[secret-group]/[secret-path]`
+
+- `/[secret-group]`: The group the secret belongs to (e.g., `digital-api-waste-notifications`).
+- `[secret-path]`: The path of the secret (e.g., `authorisation/api-key`).
+
+**Examples**:
+
+`/digital-api-waste-notifications/authorisation/api-key`
 
 **IAM Roles and Policies**
 
@@ -108,7 +140,7 @@ IAM roles and policies must follow a consistent naming convention to improve cla
 
 **Format**:
 
-Digital-[purpose]-[Role|RolePolicy]
+`Digital-[purpose][Role|RolePolicy]`
 
 - `Digital-`: All IAM roles and policies start with `Digital-`.
 - `[purpose]`: A descriptive term for the function of the role (e.g., `APILambdaDeployment`, `S3BackupManagement`).
@@ -125,10 +157,10 @@ Lambda function names follow a consistent pattern based on the project name and 
 
 **Format**:
 
-[project-name]-[function-name]
+`[ProjectName]-[FunctionName]`
 
-- `[project-name]`: The name of the project, representing the overall service or functionality.
-- `[function-name]`: The specific name of the Lambda function, based on its purpose or the functionality it provides.
+- `[ProjectName]`: The name of the project, representing the overall service or functionality.
+- `[FunctionName]`: The specific name of the Lambda function, based on its purpose or the functionality it provides.
 
 **Examples**:
 
@@ -141,9 +173,14 @@ The API Gateway is responsible for managing and routing API requests to Lambda f
 
 **API Gateway Naming Convention**:
 
-[project-name]Api
+`[ProjectName]Api`
 
-- `[project-name]`: The name of the project or service.
+- `[ProjectName]`: The name of the project or service.
+
+**Examples**:
+
+- `WasteNotificationsApi`
+- `WasteAPI-AddUser`
 
 **Resource Path Naming**:
 
@@ -154,7 +191,7 @@ The API Gateway is responsible for managing and routing API requests to Lambda f
 
 **Examples**:
 
-- **API Gateway Name**: `user-managementApi`
+- **API Gateway Name**: `UserManagementApi`
 - **API Gateway Resource Path**: `/api/create-user`, `/api/orders/get-order`
 
 **API Gateway Stage Names**:
