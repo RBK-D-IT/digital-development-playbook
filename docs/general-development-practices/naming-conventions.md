@@ -184,7 +184,7 @@ The API Gateway is responsible for managing and routing API requests to Lambda f
 
 **Resource Path Naming**:
 
-/api/[resource-path]
+`/api/[resource-path]`
 
 - `/api/`: Base path for all API resources.
 - `[resource-path]`: Path based on the function and the resource being accessed.
@@ -217,7 +217,7 @@ In this section, we focus on how to design and structure API endpoints, independ
 
 **URL Structure**:
 
-/api/[resource-name]/[resource-id] (for individual resources) /api/[resource-name] (for collections)
+`/api/[resource-name]/[resource-id]` (for individual resources) `/api/[resource-name]` (for collections)
 
 - `[resource-name]`: The resource being accessed (e.g., `users`, `orders`).
 - `[resource-id]`: The unique identifier for individual resources (when applicable).
