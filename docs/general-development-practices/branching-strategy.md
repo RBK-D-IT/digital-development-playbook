@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Overview
 
-Our team follows a modified version of **GitHub Flow** as our primary branching strategy, which integrates **release branches** to manage production readiness and releases more effectively. This strategy encourages frequent collaboration and continuous integration, with **feature branches** for development, **release branches** for preparing production releases, and deployments managed through GitHub and CI/CD pipelines.
+Our development process follows a **Git Flow** methodology to ensure smooth collaboration and deployment across environments. This strategy encourages frequent collaboration and continuous integration, with **feature / bugfix branches** for development, a **develop branch** for preparing production releases, and a **main branch** for production deployments managed through GitHub and CI/CD pipelines.
 
 ![Branching Strategy Diagram](./img/branching-workflow.png)
 
@@ -14,40 +14,37 @@ Our team follows a modified version of **GitHub Flow** as our primary branching 
 
 ## Key Concepts
 
-1. **`main` Branch**:
+1. **Main Branch (`main`)**:
 
-   - The `main` branch reflects the **latest stable development version** of the code.
-   - Merging into `main` automatically deploys the code to the **development environment** (dev), where internal testing is performed.
-   - **Production readiness** is determined through a separate release process. Code in `main` is not deployed to production until it has passed all tests and is approved via a formal GitHub Release.
+   - Represents **stable, production-ready code**.
+   - Code merged into `main` is automatically deployed to the **production environment**.
 
-2. **Feature Branches**:
+2. **Develop Branch (`develop`)**:
 
-   - Each new feature or bug fix is developed in a separate branch created off of `main`.
+   - The **integration branch** for ongoing development.
+   - All feature / bugfix branches must be merged into `develop` before going to `main`.
+   - Code merged into `develop` is automatically deployed to the **test environment**.
+
+3. **Feature and Bugfix Branches (`feature/*`, `bugfix/*`)**:
+
+   - Each new feature or bug fix is developed in a separate branch created off of `develop`.
    - Feature branches should be named descriptively, including an issue ticket reference if applicable. For more details on how branches should be named, see the [Naming Conventions](naming-conventions.md#2-git-branch-and-commit-naming-conventions) page.
-   - All changes are tested locally or in feature-specific environments before being merged into `main`.
+   - All changes are tested locally or in the **develop environment** before being merged into `develop` through a Pull Request (PR) process.
 
-3. **Pull Requests (PRs)**:
+4. **Pull Requests (PRs)**:
 
-   - Once a feature or fix is complete, create a pull request (PR) to merge the changes into the `main` branch.
+   - Once a feature or fix is complete, create a pull request (PR) to merge the changes into the `develop` branch.
    - PRs must be reviewed and approved by at least one other team member before merging.
    - Automated tests (via CI pipelines) will run against each PR to ensure stability.
 
-4. **Merging to `main`**:
+5. **Merging to `main`**:
 
-   - After a pull request is approved and all tests pass, the feature branch is merged into the `main` branch.
-   - Merging to `main` triggers an automatic deployment to the **development environment** for internal testing and iteration.
+   - After UAT / tests are complete, `develop` is merged into `main` via a PR.
+   - Merging to `main` triggers an automatic deployment to the **production environment**.
 
-5. **Release Branches**:
+6. **Syncing Branches**:
 
-   - When the code in `main` is considered stable and ready for further testing, a release branch is created.
-   - The release branch isolates the version of the code that is intended for production, allowing ongoing work in `main` without affecting the release.
-   - Example release branch naming convention: `release/v1.1.0`.
-   - The release branch undergoes thorough testing in the **test environment**, including **User Acceptance Testing (UAT)**, before being tagged for production.
-
-6. **Release Process**:
-   - The code in `main` becomes **production-ready** only after it has passed testing in the **test environment** via promotion to a **release branch**.
-   - If the release branch passes all tests, it is tagged as a **production release** and deployed to the **production environment**.
-   - For details on the release and deployment process, refer to the [Deployment Process](../devops-and-automation/deployment-process.md) document.
+   - Always merge `main` back into `develop` to ensure features / bug fixes are being created from the latest **stable, production-ready code**.
 
 ---
 
@@ -55,15 +52,23 @@ Our team follows a modified version of **GitHub Flow** as our primary branching 
 
 1. **Create a Branch**:
 
-   - From the `main` branch, create a feature branch:
+   - From the `develop` branch, create a feature branch:
      ```bash
-     git checkout -b feature/your-feature-name
+     git switch develop
+     git pull origin develop
+     git switch -C feature/your-feature-name
+     # or for bug fixes: git switch -C bugfix/your-bugfix-name
      ```
 
 2. **Work on Your Feature**:
 
    - Make meaningful commits to the feature branch, following the [Conventional Commits](../general-development-practices/coding-standards.md#commit-message-standards-conventional-commits) specification for commit messages.
    - Commit messages should include a type (e.g., `feat`, `fix`) and a short description of the change.
+   - If working on a collaborative project, always keep your branch up to date with `develop` through rebasing:
+     ```bash
+     git fetch origin
+     git rebase origin/develop
+     ```
 
 3. **Push Your Branch to GitHub**:
 
@@ -74,13 +79,23 @@ Our team follows a modified version of **GitHub Flow** as our primary branching 
 
 4. **Open a Pull Request**:
 
-   - Once the feature is complete, open a pull request to merge your feature branch into `main`.
+   - Once the feature is complete, open a pull request to merge your feature branch into `develop`.
 
-5. **Review and Merge**:
+5. **Merging into `develop`**:
 
-   - After your pull request has been reviewed and approved, and all CI tests pass, merge the feature branch into `main`.
-   - This will trigger an automatic deployment to the **development environment**.
+   - After your pull request has been reviewed and approved, and all CI tests pass, merge the feature branch into `develop` using a **squash and merge commit**.
+   - This will trigger an automatic deployment to the **test environment**.
 
-6. **Create a Release**:
-   - Once the code in `main` is stable and ready for production, follow the release process to create a release and deploy it to **test** and eventually **production**.
-   - For detailed instructions on creating releases, see the [Release Process](../devops-and-automation/release-process.md).
+6. **Merging `develop` into `main`**:
+
+   - Once the code in `develop` is stable and ready for production, create a PR from `develop` to `main`.
+   - Review and approve the PR, and merge using a **merge commit**.
+
+7. **Update `develop`**:
+   - Update `develop` to bring the latest changes in `main`:
+     ```bash
+     git switch develop
+     git pull origin develop
+     git merge main
+     git push origin develop
+     ```

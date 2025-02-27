@@ -75,8 +75,6 @@ Each commit message should include a **type**, an optional **scope**, and a **sh
 2. **Atomic Commits**:
    - Keep commits focused. Avoid mixing different types of changes (e.g., don’t include both `feat` and `fix` in the same commit).
 3. **Use Descriptive Commit Messages**:
-
    - Clearly describe **what** the change is and **why** it was made.
-
 4. **Reference Issues and PRs**:
    - If applicable, reference the issue ticket reference in the commit message (e.g., `fix(auth): correct authentication (CD-456)`).

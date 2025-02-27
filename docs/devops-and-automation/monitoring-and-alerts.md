@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Monitoring and Alerts
@@ -88,9 +88,3 @@ We use basic alerting channels to notify the team when alarms are triggered:
 4. **Manage Log Retention**
 
 - Set log retention policies to balance between retaining enough data for troubleshooting and avoiding excessive storage costs. Typically, logs for production environments may be kept longer than logs for development or test environments.
-
----
-
-## Conclusion
-
-By using **AWS CloudWatch Logs** and **basic alerting**, we can effectively monitor our applications to ensure they are running smoothly. Logging helps us detect errors and performance issues, while alerts notify us when immediate attention is required. Our focus remains on application health, ensuring that any problems are addressed quickly and efficiently.

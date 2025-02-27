@@ -37,38 +37,27 @@ Once the project is defined, development begins in a local environment. This is 
   - Set up a new repository or initialize the project based on an API template.
   - Follow the branching strategy (e.g., GitHub Flow) by creating feature branches for development work.
   - Develop, code, and write unit tests, integration tests, and E2E tests.
+  - Deploy to a development environment for initial tests.
 
 During this stage, developers create and refine their code while continuously testing to ensure quality and adherence to best practices.
 
 3. **Continuous Integration (CI) and Development Pipeline**
 
-The CI pipeline automates the deployment of code to the **development environment** and runs automated tests to ensure that the code is functional and stable.
+Prior to merging changes to the `develop` branch, the CI pipeline runs automated tests to ensure that the code is functional and stable.
 
 - **Key Activities**:
-  - Code is merged into the `main` branch (after peer review and approval).
   - **CI/CD Pipeline** automatically runs tests (unit, integration, and E2E tests).
-  - The AWS CDK (Cloud Development Kit) is used to deploy the infrastructure and application to the development environment.
-  - Run smoke tests to verify the deployment.
   - If tests fail, the code is sent back to development for further changes and fixes.
 
 This stage ensures that all code changes are continuously integrated into the system and validated with automated testing, reducing the risk of errors later in the process.
 
-4. **Create a Release**
-
-After the development environment passes all tests, a release branch is created and prepared for deployment to the **test environment**.
-
-- **Key Activities**:
-  - Create a release branch.
-  - Name the branch using **semantic versioning** (e.g., `release/v1.0.0`).
-
-The release serves as a version of the application that is ready for testing, ensuring that it meets the necessary quality and functional requirements.
-
 5. **Testing and Deployment to Test Environment**
 
-Once a release is ready, it’s deployed to the **test environment** for thorough validation, including **User Acceptance Testing (UAT)**.
+Once a feature is ready, it’s merged to the `develop` branch after PR approval and deployed to the **test environment** for thorough validation, including **User Acceptance Testing (UAT)**.
 
 - **Key Activities**:
-  - Deploy the release to the test environment using AWS CDK and CloudFormation.
+  - Code is merged to the `develop` branch (after peer review and approval).
+  - Deploy to the test environment using AWS CDK and CloudFormation.
   - Run integration and smoke tests in the test environment to validate the deployment.
   - **UAT**: The testing team and stakeholders validate the release to ensure it meets business requirements.
   - If any issues arise during testing, changes are sent back to development for fixes and re-deployment.
@@ -77,10 +66,10 @@ This stage ensures that the application is tested in an environment that closely
 
 6. **Deployment to Production**
 
-Once the release has passed testing, it is prepared for deployment to the **production environment**.
+Once the code has passed testing, it is prepared for deployment to the **production environment**.
 
 - **Key Activities**:
-  - Promote the release to production by tagging it for production deployment.
+  - Promote the release to production by raising a PR to merge to the `main` branch.
   - Deploy the application to production using AWS CDK and CloudFormation.
   - Run post-deployment **smoke tests** to ensure the application is functioning correctly in the production environment.
 
@@ -92,16 +81,8 @@ After deployment to production, the application is continuously monitored to ens
 
 - **Key Activities**:
   - Use AWS CloudWatch to monitor application performance, detect any potential issues, and set up alerts for critical errors.
-  - Merge the release branch into `main` so any changes made during UAT are synced.
+  - Merge the `main` branch into `develop` so any changes made during UAT are synced.
   - If any issues arise, the development team can roll back to a previous stable version or issue hotfixes.
   - Sprint tickets are closed, and feedback from stakeholders is gathered for future iterations.
 
 The post-production stage ensures that any issues are caught early and addressed quickly, allowing for continuous improvement.
-
----
-
-## Conclusion
-
-The Software Development Lifecycle (SDLC) is designed to ensure that every step, from planning to production, follows a structured, consistent process. By following these stages, our team can deliver high-quality software while continuously improving through feedback and monitoring.
-
-For more details on specific stages like **CI/CD**, **Testing**, and **Deployment**, refer to the related sections in this playbook.

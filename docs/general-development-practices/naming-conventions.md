@@ -192,9 +192,3 @@ In this section, we focus on how to design and structure **API endpoints**, inde
 - **Create a new user**: `POST /api/users`
 - **Update a user**: `PUT /api/users/[userId]`
 - **Delete a user**: `DELETE /api/users/[userId]`
-
----
-
-## Conclusion
-
-By maintaining consistent naming conventions across **GitHub repositories**, **AWS resources** (including **Lambda functions** and **API Gateway**), and **API design**, we improve clarity and maintainability throughout the development and deployment process. Team members should adhere to these guidelines to ensure consistency across projects.

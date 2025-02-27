@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Infrastructure as Code
@@ -160,9 +160,3 @@ After infrastructure has been provisioned, it is important to monitor and mainta
 
 - Ensure that infrastructure resources are regularly updated to take advantage of new features and security improvements.
 - AWS CDK and CloudFormation make it easy to update resources through code.
-
----
-
-## Conclusion
-
-By using **AWS CDK** and **CloudFormation**, we automate the process of provisioning and managing infrastructure across environments, ensuring consistency, scalability, and reliability. By adopting best practices for Infrastructure as Code (IaC), we reduce manual errors, improve operational efficiency, and maintain a robust infrastructure that meets the needs of our applications.
