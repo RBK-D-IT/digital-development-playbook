@@ -12,7 +12,7 @@ This document outlines how we use **AWS CloudWatch** for application **logging**
 
 ## AWS CloudWatch for Logging and Monitoring
 
-**AWS CloudWatch** is the primary tool we use to monitor our applications. It allows us to collect and analyze logs, track performance metrics, and set up simple alerts to notify the team of critical issues. Our approach focuses on keeping things simple: we monitor the application’s logs and set up basic alert thresholds to ensure that the app is running smoothly.
+AWS CloudWatch is the primary tool we use to monitor our applications. It allows us to collect and analyze logs, track performance metrics, and set up simple alerts to notify the team of critical issues. Our approach focuses on keeping things simple: we monitor the application’s logs and set up basic alert thresholds to ensure that the app is running smoothly.
 
 1. **CloudWatch Logs**
 
@@ -31,16 +31,16 @@ This document outlines how we use **AWS CloudWatch** for application **logging**
 
 2. **Log Retention and Management**
 
-By default, **CloudWatch Logs** retain logs indefinitely, but we can configure log retention based on our needs.
+By default, CloudWatch Logs retain logs indefinitely, but we can configure log retention based on our needs.
 
 - **Log Retention**: We configure retention policies to automatically delete older logs after a certain period (e.g., 30 days) to avoid unnecessary storage costs.
-- **Log Groups**: Logs are organized into **Log Groups** that represent different environments (e.g., development, test, production). Each environment’s logs are kept separate to make it easier to track issues specific to that environment.
+- **Log Groups**: Logs are organized into Log Groups that represent different environments (e.g., development, test, production). Each environment’s logs are kept separate to make it easier to track issues specific to that environment.
 
 ---
 
 ## Basic Alerting with CloudWatch
 
-We set up **basic alerts** in **AWS CloudWatch** to notify the team when certain critical thresholds are crossed. Alerts help us respond quickly to issues that could affect application performance or availability.
+We set up basic alerts in AWS CloudWatch to notify the team when certain critical thresholds are crossed. Alerts help us respond quickly to issues that could affect application performance or availability.
 
 1. **CloudWatch Alarms**
 

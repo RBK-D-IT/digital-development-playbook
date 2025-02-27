@@ -16,12 +16,12 @@ Our development process follows a **Git Flow** methodology to ensure smooth coll
 
 1. **Main Branch (`main`)**:
 
-   - Represents **stable, production-ready code**.
+   - Represents stable, production-ready code.
    - Code merged into `main` is automatically deployed to the **production environment**.
 
 2. **Develop Branch (`develop`)**:
 
-   - The **integration branch** for ongoing development.
+   - The integration branch for ongoing development.
    - All feature / bugfix branches must be merged into `develop` before going to `main`.
    - Code merged into `develop` is automatically deployed to the **test environment**.
 
@@ -29,7 +29,7 @@ Our development process follows a **Git Flow** methodology to ensure smooth coll
 
    - Each new feature or bug fix is developed in a separate branch created off of `develop`.
    - Feature branches should be named descriptively, including an issue ticket reference if applicable. For more details on how branches should be named, see the [Naming Conventions](naming-conventions.md#2-git-branch-and-commit-naming-conventions) page.
-   - All changes are tested locally or in the **develop environment** before being merged into `develop` through a Pull Request (PR) process.
+   - All changes are tested locally or in the **development environment** before being merged into `develop` through a Pull Request (PR) process.
 
 4. **Pull Requests (PRs)**:
 
@@ -44,7 +44,7 @@ Our development process follows a **Git Flow** methodology to ensure smooth coll
 
 6. **Syncing Branches**:
 
-   - Always merge `main` back into `develop` to ensure features / bug fixes are being created from the latest **stable, production-ready code**.
+   - Always merge `main` back into `develop` to ensure features / bug fixes are being created from the latest stable, production-ready code.
 
 ---
 
@@ -64,7 +64,7 @@ Our development process follows a **Git Flow** methodology to ensure smooth coll
 
    - Make meaningful commits to the feature branch, following the [Conventional Commits](../general-development-practices/coding-standards.md#commit-message-standards-conventional-commits) specification for commit messages.
    - Commit messages should include a type (e.g., `feat`, `fix`) and a short description of the change.
-   - If working on a collaborative project, always keep your branch up to date with `develop` through rebasing:
+   - Always keep your branch up to date with any potential changes to `develop` through rebasing:
      ```bash
      git fetch origin
      git rebase origin/develop
@@ -83,13 +83,13 @@ Our development process follows a **Git Flow** methodology to ensure smooth coll
 
 5. **Merging into `develop`**:
 
-   - After your pull request has been reviewed and approved, and all CI tests pass, merge the feature branch into `develop` using a **squash and merge commit**.
+   - After your pull request has been reviewed and approved, and all CI tests pass, merge the feature branch into `develop` using a squash and merge commit.
    - This will trigger an automatic deployment to the **test environment**.
 
 6. **Merging `develop` into `main`**:
 
    - Once the code in `develop` is stable and ready for production, create a PR from `develop` to `main`.
-   - Review and approve the PR, and merge using a **merge commit**.
+   - Review and approve the PR, and merge using a merge commit.
 
 7. **Update `develop`**:
    - Update `develop` to bring the latest changes in `main`:

@@ -16,12 +16,12 @@ APIs should be designed to provide clear and intuitive access to resources. URLs
 
 **General Guidelines**:
 
-- Use **nouns** to represent resources (e.g., `users`, `orders`).
-- Use **HTTP methods** (GET, POST, PUT, DELETE) to perform actions on resources.
-- Use **plural nouns** for collections of resources (e.g., `/users`, `/orders`).
-- Use **lowercase letters** and **hyphens** (`-`) to separate words in URLs.
+- Use nouns to represent resources (e.g., `users`, `orders`).
+- Use HTTP methods (GET, POST, PUT, DELETE) to perform actions on resources.
+- Use plural nouns for collections of resources (e.g., `/users`, `/orders`).
+- Use lowercase letters and hyphens (`-`) to separate words in URLs.
 - Avoid deep nesting in URL paths to keep them simple and readable.
-- Keep URL paths **short** but **descriptive**.
+- Keep URL paths short but descriptive.
 
 **URL Structure**:
 
@@ -73,10 +73,10 @@ APIs must be secure and protect sensitive data. Use the appropriate authenticati
 
 **Guidelines**:
 
-- Use **OAuth 2.0** or **JWT (JSON Web Tokens)** for API authentication.
-- Secure APIs with **HTTPS** to ensure encrypted communication.
+- Use OAuth 2.0 or JWT (JSON Web Tokens) for API authentication.
+- Secure APIs with HTTPS to ensure encrypted communication.
 - Authenticate users before allowing access to protected resources.
-- Ensure **role-based access control** (RBAC) is implemented where necessary.
+- Ensure role-based access control (RBAC) is implemented where necessary.
 
 **Example Authentication Header**:
 
@@ -126,8 +126,8 @@ All error responses should follow a consistent structure, providing useful infor
 
 **Guidelines**:
 
-- Always return **appropriate status codes** to reflect the result of the API call.
-- Provide **detailed error messages** to help the client understand what went wrong, but avoid exposing internal details that could be a security risk.
+- Always return appropriate status codes to reflect the result of the API call.
+- Provide detailed error messages to help the client understand what went wrong, but avoid exposing internal details that could be a security risk.
 
 ---
 
@@ -137,8 +137,8 @@ To ensure that APIs can handle high traffic loads and protect against abuse, rat
 
 **Guidelines**:
 
-- Implement rate limiting to control how many requests a user or client can make in a given period (e.g., **100 requests per minute**).
-- Return a **429 Too Many Requests** status code if the limit is exceeded.
+- Implement rate limiting to control how many requests a user or client can make in a given period (e.g., 100 requests per minute).
+- Return a 429 Too Many Requests status code if the limit is exceeded.
 - Provide headers to communicate rate limits and remaining requests to the client.
 
 **Example Rate Limit Headers**:
@@ -153,7 +153,7 @@ APIs must be properly documented to ensure ease of use for developers and client
 
 **Guidelines**:
 
-- Use **OpenAPI (formerly Swagger)** to generate interactive API documentation.
+- Use OpenAPI (formerly Swagger) to generate interactive API documentation.
 - Provide clear descriptions for each endpoint, including the purpose of the endpoint, the required parameters, and the expected response format.
 - Include examples of requests and responses to help developers integrate with the API.
 - Ensure that documentation is kept up to date with changes in the API.
@@ -171,6 +171,6 @@ Proper logging and monitoring of APIs are crucial for tracking performance, diag
 
 **Guidelines**:
 
-- Log all **API requests and responses** (excluding sensitive information like passwords).
-- Monitor **error rates**, **latency**, and **response times** to identify bottlenecks or issues.
-- Set up **alerts** for abnormal API behaviors (e.g., increased error rates or response time).
+- Log all API requests and responses (excluding sensitive information like passwords).
+- Monitor error rates, latency, and response times to identify bottlenecks or issues.
+- Set up alerts for abnormal API behaviors (e.g., increased error rates or response time).

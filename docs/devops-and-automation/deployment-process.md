@@ -11,7 +11,7 @@ This document outlines the process for deploying code across **Development, Test
 ### **Deployment Workflow**
 
 - **Development (manual trigger)**
-  - Can be deployed **on-demand** from local machines or triggered via GitHub Actions.
+  - Can be deployed on-demand from local machines or triggered via GitHub Actions.
 - **Test (`develop` branch merges)**
   - Automatically deployed to **Test** upon merge to `develop`.
 - **Production (`main` branch merges)**
@@ -31,7 +31,7 @@ The deployment process follows an automated pipeline using **GitHub Actions**, *
 4. **CDK Synthesis**: AWS CDK generates CloudFormation templates.
 5. **AWS Deployment**: CloudFormation provisions infrastructure and deploys the application.
 
-This automation ensures **zero manual intervention** for deployments to Test and Production.
+This automation ensures zero manual intervention for deployments to Test and Production.
 
 ---
 
@@ -40,44 +40,44 @@ This automation ensures **zero manual intervention** for deployments to Test and
 ### **1. Development Environment**
 
 - **Trigger**:
-  - **On-demand** deployment via local machine.
-  - **OR** via GitHub Actions (if a developer raises a PR to `develop`).
+  - On-demand deployment via local machine.
+  - On-demand deployment via GitHub Actions (if a developer raises a PR to `develop`).
 - **Steps**:
   - The pipeline builds, tests, and validates the code.
   - AWS CDK provisions or updates infrastructure.
   - Smoke tests verify core functionality.
 - **Who is involved?**
-  - **Developers** trigger and monitor deployments.
+  - Developers trigger and monitor deployments.
 
 ---
 
 ### **2. Test Environment**
 
 - **Trigger**:
-  - A **merge into `develop`** automatically triggers deployment.
+  - A merge into `develop` automatically triggers deployment.
 - **Steps**:
   - GitHub Actions builds, tests, and deploys the application.
   - AWS CDK provisions the test environment.
   - Integration tests and smoke tests run.
 - **Who is involved?**
-  - **Developers** ensure smooth deployment.
-  - **Testers** validate functionality in the Test environment.
-  - **Stakeholders** may review key features.
+  - Developers ensure smooth deployment.
+  - Testers validate functionality in the Test environment.
+  - Stakeholders may review key features.
 
 ---
 
 ### **3. Production Environment**
 
 - **Trigger**:
-  - A **merge into `main`** automatically triggers deployment.
+  - A merge into `main` automatically triggers deployment.
 - **Steps**:
   - GitHub Actions builds, tests, and deploys the application.
   - AWS CDK provisions production infrastructure.
   - Smoke tests confirm a successful deployment.
-  - **Monitoring tools** like AWS CloudWatch track performance.
+  - Monitoring tools like AWS CloudWatch track performance.
 - **Who is involved?**
-  - **Developers** oversee deployments and monitor performance.
-  - **Stakeholders** validate post-deployment success.
+  - Developers oversee deployments and monitor performance.
+  - Stakeholders validate post-deployment success.
 
 ---
 
@@ -85,17 +85,17 @@ This automation ensures **zero manual intervention** for deployments to Test and
 
 ### **Automatic Rollback with AWS CloudFormation**
 
-- If a **CloudFormation deployment fails**, AWS automatically rolls back to the previous stable state.
+- If a CloudFormation deployment fails, AWS automatically rolls back to the previous stable state.
 
 ### **Application Rollback**
 
 - If an issue is detected in production:
-  - The pipeline can **redeploy the last stable version**.
-  - Developers can manually **rollback to a previous Git commit**.
+  - The pipeline can redeploy the last stable version.
+  - Developers can manually rollback to a previous Git commit.
 
 ### **Manual Intervention**
 
-- In severe incidents, developers can initiate a rollback **via AWS CDK or GitHub Actions**.
+- In severe incidents, developers can initiate a rollback via AWS CDK or GitHub Actions.
 
 ---
 
@@ -114,7 +114,7 @@ This automation ensures **zero manual intervention** for deployments to Test and
 
 ### **Stakeholders**
 
-- Provide **UAT feedback** for Test environment deployments.
+- Provide UAT feedback for Test environment deployments.
 - Validate production features after deployment.
 
 ---

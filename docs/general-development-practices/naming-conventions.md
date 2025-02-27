@@ -12,7 +12,7 @@ This document outlines the **naming conventions** that our team follows across v
 
 ## 1. GitHub Repository Naming Conventions
 
-All GitHub repositories must follow a consistent naming convention to improve organization and clarity. The following rules apply to all **GitHub repositories**.
+All GitHub repositories must follow a consistent naming convention to improve organization and clarity. The following rules apply to all GitHub repositories.
 
 **Repository Naming Convention Structure**
 
@@ -93,14 +93,14 @@ By using these four prefixes, we ensure that branches are easy to understand and
 
 ## 3. AWS Resource Naming Conventions
 
-Consistent naming in AWS resources helps to quickly identify the purpose and environment of resources. The following conventions apply to common AWS services such as **IAM roles**, **Lambda functions**, and **S3 buckets**.
+Consistent naming in AWS resources helps to quickly identify the purpose and environment of resources. The following conventions apply to common AWS services such as IAM roles, Lambda functions, and S3 buckets.
 
 **General Guidelines**:
 
-- Use **lowercase letters**, numbers, and **hyphens** (`-`) to separate words.
-- **Prefix** resource names with the **environment** (`dev`, `test`, `prod`) to easily identify where resources are deployed.
-- Include the **service type** in the name (e.g., `lambda`, `s3`, `iam`).
-- Keep names **short** but **descriptive**.
+- Use lowercase letters, numbers, and hyphens (`-`) to separate words.
+- Prefix resource names with the environment (`dev`, `test`, `prod`) to easily identify where resources are deployed.
+- Include the service type in the name (e.g., `lambda`, `s3`, `iam`).
+- Keep names short but descriptive.
 
 **IAM Roles and Policies**
 
@@ -121,7 +121,7 @@ Digital-[purpose]-[Role|RolePolicy]
 
 **Lambda Functions**
 
-Lambda function names follow a consistent pattern based on the **project name** and **function name**, ensuring clarity in identifying what each function does and to which project it belongs.
+Lambda function names follow a consistent pattern based on the project name and function name, ensuring clarity in identifying what each function does and to which project it belongs.
 
 **Format**:
 
@@ -137,7 +137,7 @@ Lambda function names follow a consistent pattern based on the **project name** 
 
 **API Gateway (AWS)**
 
-The **API Gateway** is responsible for managing and routing API requests to Lambda functions. In the **AWS infrastructure context**, we focus on how the **API Gateway** is named and structured.
+The API Gateway is responsible for managing and routing API requests to Lambda functions. In the AWS infrastructure context, we focus on how the API Gateway is named and structured.
 
 **API Gateway Naming Convention**:
 
@@ -169,13 +169,13 @@ The stage name is based on the environment (e.g., `dev`, `test`, `prod`).
 
 ## 4. API Design Naming Conventions
 
-In this section, we focus on how to design and structure **API endpoints**, independent of the AWS infrastructure. This covers how APIs should be named and accessed from a development perspective.
+In this section, we focus on how to design and structure API endpoints, independent of the AWS infrastructure. This covers how APIs should be named and accessed from a development perspective.
 
 **General Guidelines**:
 
-- Use **nouns** to represent resources (e.g., `users`, `orders`).
-- Use **HTTP methods** (GET, POST, PUT, DELETE) to indicate the action being performed.
-- Use **lowercase letters** and **hyphens** (`-`) in URLs.
+- Use nouns to represent resources (e.g., `users`, `orders`).
+- Use HTTP methods (GET, POST, PUT, DELETE) to indicate the action being performed.
+- Use lowercase letters and hyphens (`-`) in URLs.
 - Keep URLs short and descriptive.
 
 **URL Structure**:

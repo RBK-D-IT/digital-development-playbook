@@ -104,4 +104,4 @@ Code reviews are a critical part of our development workflow, ensuring code qual
 
 - We use **squash and merge** for pull requests to keep the `develop` branch history clean and avoid clutter with numerous small commits.
 - Ensure the final commit message after squashing follows the [Conventional Commits](../general-development-practices/coding-standards.md#commit-message-standards-conventional-commits) format.
-- For promoting between `develop` and `main`, a **merge commit** is used.
+- For promoting between `develop` and `main`, a merge commit is used.

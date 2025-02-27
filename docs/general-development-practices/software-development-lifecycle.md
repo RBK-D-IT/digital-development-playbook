@@ -18,7 +18,7 @@ The diagram below provides a visual representation of the SDLC stages our team f
 
 1. **Pre-Development**
 
-The pre-development stage focuses on **gathering requirements** and defining the scope of the project before actual development work begins.
+The pre-development stage focuses on gathering requirements and defining the scope of the project before actual development work begins.
 
 - **Key Activities**:
   - Obtain requirements from the business.
@@ -35,7 +35,7 @@ Once the project is defined, development begins in a local environment. This is 
 - **Key Activities**:
   - Configure the project in a local environment, using templates and repositories.
   - Set up a new repository or initialize the project based on an API template.
-  - Follow the branching strategy (e.g., GitHub Flow) by creating feature branches for development work.
+  - Follow the [branching strategy](../general-development-practices/branching-strategy.md) by creating feature branches for development work.
   - Develop, code, and write unit tests, integration tests, and E2E tests.
   - Deploy to a development environment for initial tests.
 
@@ -46,14 +46,14 @@ During this stage, developers create and refine their code while continuously te
 Prior to merging changes to the `develop` branch, the CI pipeline runs automated tests to ensure that the code is functional and stable.
 
 - **Key Activities**:
-  - **CI/CD Pipeline** automatically runs tests (unit, integration, and E2E tests).
+  - CI/CD Pipeline automatically runs tests (unit, integration, and E2E tests).
   - If tests fail, the code is sent back to development for further changes and fixes.
 
 This stage ensures that all code changes are continuously integrated into the system and validated with automated testing, reducing the risk of errors later in the process.
 
 5. **Testing and Deployment to Test Environment**
 
-Once a feature is ready, it’s merged to the `develop` branch after PR approval and deployed to the **test environment** for thorough validation, including **User Acceptance Testing (UAT)**.
+Once a feature is ready, it’s merged to the `develop` branch after PR approval and deployed to the **test environment** for thorough validation, including User Acceptance Testing (UAT).
 
 - **Key Activities**:
   - Code is merged to the `develop` branch (after peer review and approval).
@@ -71,7 +71,7 @@ Once the code has passed testing, it is prepared for deployment to the **product
 - **Key Activities**:
   - Promote the release to production by raising a PR to merge to the `main` branch.
   - Deploy the application to production using AWS CDK and CloudFormation.
-  - Run post-deployment **smoke tests** to ensure the application is functioning correctly in the production environment.
+  - Run post-deployment smoke tests to ensure the application is functioning correctly in the production environment.
 
 At this stage, the application goes live, and users can begin interacting with it.
 
@@ -81,7 +81,7 @@ After deployment to production, the application is continuously monitored to ens
 
 - **Key Activities**:
   - Use AWS CloudWatch to monitor application performance, detect any potential issues, and set up alerts for critical errors.
-  - Merge the `main` branch into `develop` so any changes made during UAT are synced.
+  - Merge the `main` branch into `develop` to ensure any changes are synced.
   - If any issues arise, the development team can roll back to a previous stable version or issue hotfixes.
   - Sprint tickets are closed, and feedback from stakeholders is gathered for future iterations.
 

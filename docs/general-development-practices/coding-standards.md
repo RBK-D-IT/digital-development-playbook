@@ -34,11 +34,11 @@ To maintain consistency and readability across our codebase, we follow these cod
 
 ## Commit Message Standards (Conventional Commits)
 
-We follow the **Conventional Commits** specification for commit messages. This ensures that our commit history is structured, easy to understand, and helps with automating semantic versioning and changelog generation.
+We follow the Conventional Commits specification for commit messages. This ensures that our commit history is structured, easy to understand, and helps with automating semantic versioning and changelog generation.
 
 **Conventional Commits Format**
 
-Each commit message should include a **type**, an optional **scope**, and a **short description** of the change. If applicable, the issue ticket reference should also be included. Optionally, you can also include a body and footer for more details.
+Each commit message should include a type, an optional scope, and a short description of the change. If applicable, the issue ticket reference should also be included. Optionally, you can also include a body and footer for more details.
 
 ```text
 <type>[optional scope]: <short description> <(issue-ticket-reference)>
@@ -75,6 +75,6 @@ Each commit message should include a **type**, an optional **scope**, and a **sh
 2. **Atomic Commits**:
    - Keep commits focused. Avoid mixing different types of changes (e.g., don’t include both `feat` and `fix` in the same commit).
 3. **Use Descriptive Commit Messages**:
-   - Clearly describe **what** the change is and **why** it was made.
+   - Clearly describe what the change is and why it was made.
 4. **Reference Issues and PRs**:
    - If applicable, reference the issue ticket reference in the commit message (e.g., `fix(auth): correct authentication (CD-456)`).

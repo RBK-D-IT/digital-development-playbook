@@ -20,7 +20,7 @@ The main stages in our CI/CD pipeline include:
 
 ### 1. Continuous Integration (CI)
 
-When a **feature or bug fix** is pushed to a branch in GitHub, the **CI pipeline** is triggered via GitHub Actions.
+When a feature or bug fix is pushed to a branch in GitHub, the CI pipeline is triggered via GitHub Actions.
 
 **Steps in the CI Stage**:
 
@@ -31,7 +31,7 @@ When a **feature or bug fix** is pushed to a branch in GitHub, the **CI pipeline
   - **End-to-End (E2E) Tests**: Simulate user workflows.
 - **Code Linting**: Check for code quality and adherence to standards.
 
-If any step fails, the pipeline **notifies the developer** to make changes and re-run the pipeline.
+If any step fails, the pipeline notifies the developer to make changes and re-run the pipeline.
 
 ---
 
@@ -40,30 +40,30 @@ If any step fails, the pipeline **notifies the developer** to make changes and r
 #### **Test Environment**
 
 - **Trigger**:
-  - A **PR is merged into `develop`**.
-  - **OR** a developer triggers a manual deployment.
+  - A PR is merged into `develop`.
+  - A developer triggers a manual deployment.
 - **Action**:
-  - The pipeline **automatically deploys to the test environment**.
+  - The pipeline automatically deploys to the **test environment**.
   - AWS CDK assumes an AWS role to deploy in the test account.
   - Integration and smoke tests run to validate stability.
 
 #### **Production Environment**
 
 - **Trigger**:
-  - A **PR is merged into `main`**.
-  - **OR** a developer triggers a manual deployment.
+  - A PR is merged into `main`.
+  - A developer triggers a manual deployment.
 - **Action**:
-  - The pipeline **automatically deploys to the production environment**.
+  - The pipeline automatically deploys to the **production environment**.
   - AWS CDK provisions or updates production infrastructure.
-  - **Post-deployment monitoring** ensures stability.
+  - Post-deployment monitoring ensures stability.
 
 ---
 
 ### 3. On-Demand Deployments
 
-- **Developers can trigger manual deployments** to **Development**, **Test** and **Production** environments.
+- Developers can trigger manual deployments to **Development**, **Test** and **Production** environments.
 - This is useful for debugging, feature previews, or infrastructure testing.
-- On-demand deployment GitHub Actions are configured to assume AWS roles for sandbox and development environments.
+- Manual deployments (like automated deployments) are configured via GitHub Actions.
 
 ---
 
@@ -71,9 +71,9 @@ If any step fails, the pipeline **notifies the developer** to make changes and r
 
 ### 1. Automate All Stages
 
-- **Automated Testing**: Ensure all commits are validated with **unit, integration, and E2E tests**.
+- **Automated Testing**: Ensure all commits are validated with unit, integration, and E2E tests.
 - **GitHub Actions for CI/CD**: Automate the build, test, and deployment processes.
-- **Infrastructure as Code**: Use **AWS CDK** for consistent infrastructure management.
+- **Infrastructure as Code**: Use AWS CDK for consistent infrastructure management.
 
 ### 2. Secure Secrets Management
 
@@ -88,13 +88,13 @@ If any step fails, the pipeline **notifies the developer** to make changes and r
 
 ### 4. Rollback Mechanism
 
-- Use AWS **CloudFormation rollback strategies** in case of deployment failures.
-- Ensure previous stable versions can be **redeployed quickly** if needed.
+- Use AWS CloudFormation rollback strategies in case of deployment failures.
+- Ensure previous stable versions can be redeployed quickly if needed.
 
 ### 5. Monitor and Optimize Pipeline Performance
 
 - **Parallel Testing**: Speed up CI by running tests in parallel.
-- **Monitoring**: Use **AWS CloudWatch** and **GitHub Actions logs** to track pipeline execution.
+- **Monitoring**: Use AWS CloudWatch and GitHub Actions logs to track pipeline execution.
 
 ---
 
