@@ -74,7 +74,7 @@ Our development process follows a **Git Flow** methodology to ensure smooth coll
 
    - Push your branch to the remote repository:
      ```bash
-     git push origin feature/your-feature-name
+     git push -u origin feature/your-feature-name
      ```
 
 4. **Open a Pull Request**:
