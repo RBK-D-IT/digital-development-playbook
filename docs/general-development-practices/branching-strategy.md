@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Overview
 
-Our development process follows a **Git Flow** methodology to ensure smooth collaboration and deployment across environments. This strategy encourages frequent collaboration and continuous integration, with **feature / bugfix branches** for development, a **develop branch** for preparing production releases, and a **main branch** for production deployments managed through GitHub and CI/CD pipelines.
+Our development process follows a structured Git branching strategy to ensure smooth collaboration and deployment across environments. This strategy encourages frequent collaboration and continuous integration, with **feature / bugfix branches** for development, a **develop branch** for staging and testing, and a **main branch** for production deployments managed through GitHub and CI/CD pipelines.
 
 ![Branching Strategy Diagram](./img/branching-workflow.png)
 
