@@ -26,7 +26,7 @@ AWS CloudWatch is the primary tool we use to monitor our applications. It allows
 
 - **How we use logs**:
   - **Error Detection**: Search logs for error patterns or exceptions that may indicate problems with the application.
-  - **Performance Issues**: Identify slow-performing parts of the application by analyzing log timestamps.
+  - **Performance Issues**: Identify slow-performing parts of the application by analysing log timestamps.
   - **User Activity Tracking**: Optionally, track important user activities (e.g., logins, API calls) to monitor how the application is being used.
 
 2. **Log Retention and Management**
@@ -34,7 +34,7 @@ AWS CloudWatch is the primary tool we use to monitor our applications. It allows
 By default, CloudWatch Logs retain logs indefinitely, but we can configure log retention based on our needs.
 
 - **Log Retention**: We configure retention policies to automatically delete older logs after a certain period (e.g., 30 days) to avoid unnecessary storage costs.
-- **Log Groups**: Logs are organized into Log Groups that represent different environments (e.g., development, test, production). Each environment’s logs are kept separate to make it easier to track issues specific to that environment.
+- **Log Groups**: Logs are organised into Log Groups that represent different environments (e.g., development, test, production). Each environment’s logs are kept separate to make it easier to track issues specific to that environment.
 
 ---
 
