@@ -28,8 +28,8 @@ Our development process follows a structured Git branching strategy to ensure sm
 3. **Feature and Bugfix Branches (`feature/*`, `bugfix/*`)**:
 
    - Each new feature or bug fix is developed in a separate branch created off of `develop`.
-   - Feature branches should be named descriptively, including an issue ticket reference if applicable. For more details on how branches should be named, see the [Naming Conventions](naming-conventions.md#2-git-branch-and-commit-naming-conventions) page.
-   - All changes are tested locally or in the **development environment** before being merged into `develop` through a Pull Request (PR) process.
+   - Feature branches should be named descriptively, including an issue ticket reference if applicable. For more details on how branches should be named, see [Git Branch and Commit Naming Conventions](naming-conventions.md#2-git-branch-and-commit-naming-conventions).
+   - All changes are tested locally or in the **development environment** before being merged into `develop` through a Pull Request (PR) process. For details on how PRs should be named, see [Pull Request Naming Conventions](naming-conventions.md#3-pull-request-naming-conventions).
 
 4. **Pull Requests (PRs)**:
 

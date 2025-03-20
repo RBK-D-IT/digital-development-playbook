@@ -14,9 +14,11 @@ This document outlines the **naming conventions** that our team follows across v
 
 All GitHub repositories must follow a consistent naming convention to improve organization and clarity. The following rules apply to all GitHub repositories.
 
-**Repository Naming Convention Structure**
+**Format**:
 
+```
 digital-[project-type]-[project-name]-[optional-context]
+```
 
 - `[project-type]`: The type of project (e.g., `api`, `app`, `web`, `cdk`, `lib`, `tool`, `template`).
 - `[project-name]`: A descriptive name for the project.
@@ -74,7 +76,7 @@ digital-[project-type]-[project-name]-[optional-context]
 
 Branch names should clearly indicate the type of work being done. They are structured to quickly convey the purpose of the branch and help organize tasks. While similar to conventional commit types, branch naming is broader and identifies a set of changes rather than individual updates. If applicable, the issue ticket reference should be prefixed to the branch name to ensure easy tracking between the code and the associated task or issue.
 
-**Branch Naming Format**:
+**Format**:
 
 - `feature/`: For new features or enhancements. Examples: `feature/AB-123-add-login-page`, `feature/add-user-profile`
 - `bugfix/`: For resolving bugs. Examples: `bugfix/AB-456-fix-header-alignment`, `bugfix/address-memory-leak`
@@ -93,11 +95,13 @@ By using these four prefixes, we ensure that branches are easy to understand and
 
 ## 3. Pull Request Naming Conventions
 
-To keep our workflow consistent and make it easier to link pull requests to work items in our issue tracking system (e.g., JIRA), please follow this naming convention for all pull requests.
+To keep our workflow consistent and make it easier to link pull requests to work items in our issue tracking system (e.g., JIRA), please follow this naming convention for all pull requests when creating new features / bug fixes.
 
 **Format**:
 
-`[JIRA-TICKET-ID] Short, descriptive summary`
+```
+[JIRA-TICKET-ID] Short, descriptive summary
+```
 
 - `[JIRA-TICKET-ID]`: JIRA ticket number of the feature / bug fix.
 
@@ -107,6 +111,28 @@ To keep our workflow consistent and make it easier to link pull requests to work
 - `[CD-456] Refactor calendar file upload`
 - `[EF-789] Improve error handling in shared logger`
 - `Add additional logging to payment processing` _(if no ticket number applies / given)_
+
+**Promoting Between Branches**:
+
+When raising Pull Requests to promote changes between long lived branches (e.g., from `develop` to `main`), it should be formatted as below:
+
+**Format**:
+
+```
+Promote [base-branch] to [target-branch]
+```
+
+- `[base-branch]`: The branch where the changes are coming from.
+- `[target-branch]`: The branch where the changes are being merged into.
+
+**Note for Promoting to `main`**
+
+When promoting to the main branch, prefix the PR with `Release:` to indicate they are changes being pushed into the production environment.
+
+**Examples**:
+
+- `Promote develop to test` (Only if the version control process dictates a requirement for multiple long lived branches)
+- `Release: Promote develop to main` (Normal convention)
 
 ---
 
