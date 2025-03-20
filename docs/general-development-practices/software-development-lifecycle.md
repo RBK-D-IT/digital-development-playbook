@@ -24,7 +24,7 @@ The pre-development stage focuses on gathering requirements and defining the sco
   - Obtain requirements from the business.
   - Define project scope and objectives.
   - Agree on timelines and set project milestones.
-  - Create sprint tickets and organize them into the backlog for the development team.
+  - Create sprint tickets and organise them into the backlog for the development team.
 
 This stage ensures that the project is properly scoped, and that all stakeholders are aligned on the goals before development begins.
 
@@ -33,8 +33,8 @@ This stage ensures that the project is properly scoped, and that all stakeholder
 Once the project is defined, development begins in a local environment. This is where the bulk of coding, testing, and iteration occurs.
 
 - **Key Activities**:
-  - Configure the project in a local environment, using templates and repositories.
-  - Set up a new repository or initialize the project based on an API template.
+  - Configure the project in a local environment, using templates and repositories (if required).
+  - Set up a new repository or initialize the project based on an API template (if required).
   - Follow the [branching strategy](../general-development-practices/branching-strategy.md) by creating feature branches for development work.
   - Develop, code, and write unit tests, integration tests, and E2E tests.
   - Deploy to a development environment for initial tests.
