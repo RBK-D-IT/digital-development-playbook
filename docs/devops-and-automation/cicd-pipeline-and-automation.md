@@ -91,7 +91,7 @@ If any step fails, the pipeline notifies the developer to make changes and re-ru
 - Use AWS CloudFormation rollback strategies in case of deployment failures.
 - Ensure previous stable versions can be redeployed quickly if needed.
 
-### 5. Monitor and Optimize Pipeline Performance
+### 5. Monitor and Optimise Pipeline Performance
 
 - **Parallel Testing**: Speed up CI by running tests in parallel.
 - **Monitoring**: Use AWS CloudWatch and GitHub Actions logs to track pipeline execution.
