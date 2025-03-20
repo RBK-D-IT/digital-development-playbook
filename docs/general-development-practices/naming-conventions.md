@@ -134,6 +134,24 @@ Similar to the parameter store, secrets are stored in a similar convention:
 
 `/digital-api-waste-notifications/authorisation/api-key`
 
+**S3 Buckets**
+
+To ensure consistency and clarity across our S3 usage, the following naming convention should be used when creating new S3 buckets. This aligns with our general naming conventions and follows a similar structure to how we name Parameter Store entries.
+
+**Format**:
+
+`[service|team]-[type]-[purpose]`
+
+- `[service|team]`: The name of the application, API or business/team area (e.g., `api-waste-notifications` or `rbk-housing`).
+- `[type]`: Describes what type of storage the bucket is used for (`data`, `assets`, `logs`, `exports`, `imports`, `archive`, etc.).
+- `[purpose]`: Optional - What is being stored in the bucket (e.g., `waste-calendars`, `site-photos`).
+
+**Examples**:
+
+`waste-data-collection-calendars`
+`rbk-parking-data-car-park-photos`
+`s3-file-transfer-logs`
+
 **IAM Roles and Policies**
 
 IAM roles and policies must follow a consistent naming convention to improve clarity and maintainability. The format for IAM roles and policies is as follows:
