@@ -91,7 +91,26 @@ By using these four prefixes, we ensure that branches are easy to understand and
 
 ---
 
-## 3. AWS Resource Naming Conventions
+## 3. Pull Request Naming Conventions
+
+To keep our workflow consistent and make it easier to link pull requests to work items in our issue tracking system (e.g., JIRA), please follow this naming convention for all pull requests.
+
+**Format**:
+
+`[JIRA-TICKET-ID] Short, descriptive summary`
+
+- `[JIRA-TICKET-ID]`: JIRA ticket number of the feature / bug fix.
+
+**Examples**:
+
+- `[AB-123] Add user authentication to login page`
+- `[CD-456] Refactor calendar file upload`
+- `[EF-789] Improve error handling in shared logger`
+- `Add additional logging to payment processing` _(if no ticket number applies / given)_
+
+---
+
+## 4. AWS Resource Naming Conventions
 
 Consistent naming in AWS resources helps to quickly identify the purpose and environment of resources. The following conventions apply to common AWS services such as IAM roles, Lambda functions, and S3 buckets.
 
@@ -119,7 +138,7 @@ Parameters are stored using a group/path convention, as follows:
 `/system/domain/digital-public`
 `/digital-api-waste-notifications/storage/s3-bucket-path`
 
-**Secrets Manager**
+### Secrets Manager
 
 Similar to the parameter store, secrets are stored in a similar convention:
 
@@ -134,7 +153,7 @@ Similar to the parameter store, secrets are stored in a similar convention:
 
 `/digital-api-waste-notifications/authorisation/api-key`
 
-**S3 Buckets**
+### S3 Buckets
 
 To ensure consistency and clarity across our S3 usage, the following naming convention should be used when creating new S3 buckets. This aligns with our general naming conventions and follows a similar structure to how we name Parameter Store entries.
 
@@ -152,7 +171,7 @@ To ensure consistency and clarity across our S3 usage, the following naming conv
 `rbk-parking-data-car-park-photos`
 `s3-file-transfer-logs`
 
-**IAM Roles and Policies**
+### IAM Roles and Policies
 
 IAM roles and policies must follow a consistent naming convention to improve clarity and maintainability. The format for IAM roles and policies is as follows:
 
@@ -169,7 +188,7 @@ IAM roles and policies must follow a consistent naming convention to improve cla
 - **IAM Role**: `Digital-APILambdaDeploymentRole`
 - **IAM Role Policy**: `Digital-APILambdaDeploymentRolePolicy`
 
-**Lambda Functions**
+### Lambda Functions
 
 Lambda function names follow a consistent pattern based on the project name and function name, ensuring clarity in identifying what each function does and to which project it belongs.
 
@@ -185,11 +204,11 @@ Lambda function names follow a consistent pattern based on the project name and 
 - `BaseAPI-GetSystemStatus`
 - `WasteAPI-AddUser`
 
-**API Gateway (AWS)**
+### API Gateway
 
 The API Gateway is responsible for managing and routing API requests to Lambda functions. In the AWS infrastructure context, we focus on how the API Gateway is named and structured.
 
-**API Gateway Naming Convention**:
+**Format**:
 
 `[ProjectName]Api`
 
@@ -222,7 +241,7 @@ The stage name is based on the environment (e.g., `dev`, `test`, `prod`).
 
 ---
 
-## 4. API Design Naming Conventions
+## 5. API Design Naming Conventions
 
 In this section, we focus on how to design and structure API endpoints, independent of the AWS infrastructure. This covers how APIs should be named and accessed from a development perspective.
 
