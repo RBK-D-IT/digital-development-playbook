@@ -34,7 +34,7 @@ To maintain consistency and readability across our codebase, we follow these cod
 
 ## Commit Message Standards (Conventional Commits)
 
-We follow the Conventional Commits specification for commit messages. This ensures that our commit history is structured, easy to understand, and helps with automating semantic versioning and changelog generation.
+Use the Conventional Commits specification for commit messages where possible. This ensures that our commit history is structured, easy to understand, and helps with automating semantic versioning and changelog generation.
 
 **Conventional Commits Format**
 
