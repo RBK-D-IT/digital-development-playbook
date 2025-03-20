@@ -27,7 +27,7 @@ Code reviews are a critical part of our development workflow, ensuring code qual
      - **Check for Code Quality**: Ensure that the code is clean, well-structured, and follows the team's [coding standards](../general-development-practices/coding-standards.md).
      - **Test Coverage**: Confirm that the new code has appropriate unit tests, and ensure that existing tests pass.
      - **Functionality**: Verify that the feature works as expected by testing locally when applicable.
-     - **Security**: Check for potential security vulnerabilities, especially when dealing with sensitive data (e.g., authentication, authorization).
+     - **Security**: Check for potential security vulnerabilities, especially when dealing with sensitive data (e.g., authentication, authorisation).
      - **Performance**: Look for possible performance optimizations, especially for high-impact areas like database queries or API calls.
 
 3. **Address Feedback**:
