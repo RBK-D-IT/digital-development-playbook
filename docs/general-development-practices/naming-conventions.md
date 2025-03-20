@@ -12,7 +12,7 @@ This document outlines the **naming conventions** that our team follows across v
 
 ## 1. GitHub Repository Naming Conventions
 
-All GitHub repositories must follow a consistent naming convention to improve organization and clarity. The following rules apply to all GitHub repositories.
+All GitHub repositories must follow a consistent naming convention to improve organisation and clarity. The following rules apply to all GitHub repositories.
 
 **Format**:
 
@@ -74,7 +74,7 @@ digital-[project-type]-[project-name]-[optional-context]
 
 ## 2. Git Branch and Commit Naming Conventions
 
-Branch names should clearly indicate the type of work being done. They are structured to quickly convey the purpose of the branch and help organize tasks. While similar to conventional commit types, branch naming is broader and identifies a set of changes rather than individual updates. If applicable, the issue ticket reference should be prefixed to the branch name to ensure easy tracking between the code and the associated task or issue.
+Branch names should clearly indicate the type of work being done. They are structured to quickly convey the purpose of the branch and help organise tasks. While similar to conventional commit types, branch naming is broader and identifies a set of changes rather than individual updates. If applicable, the issue ticket reference should be prefixed to the branch name to ensure easy tracking between the code and the associated task or issue.
 
 **Format**:
 
@@ -280,7 +280,9 @@ In this section, we focus on how to design and structure API endpoints, independ
 
 **URL Structure**:
 
-`/api/[resource-name]/[resource-id]` (for individual resources) `/api/[resource-name]` (for collections)
+```
+`/api/[resource-name]/[resource-id]
+```
 
 - `[resource-name]`: The resource being accessed (e.g., `users`, `orders`).
 - `[resource-id]`: The unique identifier for individual resources (when applicable).
