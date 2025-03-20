@@ -8,7 +8,7 @@ sidebar_position: 2
 
 This document outlines the process for deploying code across **Development, Test, and Production environments** using **GitHub Actions**, **AWS CDK**, and **AWS CloudFormation**. Our deployment strategy ensures consistency, automation, and reliability while incorporating validation and rollback mechanisms.
 
-### **Deployment Workflow**
+### Deployment Workflow
 
 - **Development (manual trigger)**
   - Can be deployed on-demand from local machines or triggered via GitHub Actions.
@@ -19,11 +19,11 @@ This document outlines the process for deploying code across **Development, Test
 
 ---
 
-## **AWS Deployment Workflow Overview**
+## AWS Deployment Workflow Overview
 
 The deployment process follows an automated pipeline using **GitHub Actions**, **AWS CDK**, and **CloudFormation**:
 
-### **Deployment Architecture Steps**
+### Deployment Architecture Steps
 
 1. **Build and Test**: On a PR merge, GitHub Actions runs build and test processes.
 2. **OIDC Authentication**: GitHub Actions authenticates with AWS using OpenID Connect (OIDC).
@@ -35,9 +35,9 @@ This automation ensures zero manual intervention for deployments to Test and Pro
 
 ---
 
-## **Deployment Stages**
+## Deployment Stages
 
-### **1. Development Environment**
+### 1. Development Environment
 
 - **Trigger**:
   - On-demand deployment via local machine.
@@ -51,7 +51,7 @@ This automation ensures zero manual intervention for deployments to Test and Pro
 
 ---
 
-### **2. Test Environment**
+### 2. Test Environment
 
 - **Trigger**:
   - A merge into `develop` automatically triggers deployment.
@@ -66,7 +66,7 @@ This automation ensures zero manual intervention for deployments to Test and Pro
 
 ---
 
-### **3. Production Environment**
+### 3. Production Environment
 
 - **Trigger**:
   - A merge into `main` automatically triggers deployment.
@@ -81,38 +81,38 @@ This automation ensures zero manual intervention for deployments to Test and Pro
 
 ---
 
-## **Rollback Strategy**
+## Rollback Strategy
 
-### **Automatic Rollback with AWS CloudFormation**
+### Automatic Rollback with AWS CloudFormation
 
 - If a CloudFormation deployment fails, AWS automatically rolls back to the previous stable state.
 
-### **Application Rollback**
+### Application Rollback
 
 - If an issue is detected in production:
   - The pipeline can redeploy the last stable version.
   - Developers can manually rollback to a previous Git commit.
 
-### **Manual Intervention**
+### Manual Intervention
 
 - In severe incidents, developers can initiate a rollback via AWS CDK or GitHub Actions.
 
 ---
 
-## **Deployment Responsibilities**
+## Deployment Responsibilities
 
-### **Developers**
+### Developers
 
 - Manage CI/CD pipelines.
 - Monitor deployments for issues.
 - Fix bugs and rollback if necessary.
 
-### **Testing Team**
+### Testing Team
 
 - Validate deployments in Test environments.
 - Report issues and verify fixes.
 
-### **Stakeholders**
+### Stakeholders
 
 - Provide UAT feedback for Test environment deployments.
 - Validate production features after deployment.
