@@ -24,7 +24,7 @@ When a feature or bug fix is pushed to a branch in GitHub, the CI pipeline is tr
 
 **Steps in the CI Stage**:
 
-- **Build**: The application is compiled, packaged, or containerized as needed.
+- **Build**: The application is compiled, packaged, or containerised as needed.
 - **Automated Testing**:
   - **Unit Tests**: Validate individual components or functions.
   - **Integration Tests**: Ensure that services interact correctly.
