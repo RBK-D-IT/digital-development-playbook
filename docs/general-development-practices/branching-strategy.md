@@ -53,6 +53,7 @@ Our development process follows a structured Git branching strategy to ensure sm
 1. **Create a Branch**:
 
    - From the `develop` branch, create a feature branch:
+
      ```bash
      git switch develop
      git pull origin develop
@@ -65,6 +66,7 @@ Our development process follows a structured Git branching strategy to ensure sm
    - Make meaningful commits to the feature branch, following the [Conventional Commits](../general-development-practices/coding-standards.md#commit-message-standards-conventional-commits) specification for commit messages.
    - Commit messages should include a type (e.g., `feat`, `fix`) and a short description of the change.
    - Always keep your branch up to date with any potential changes to `develop` through rebasing:
+
      ```bash
      git fetch origin
      git rebase origin/develop
@@ -73,6 +75,7 @@ Our development process follows a structured Git branching strategy to ensure sm
 3. **Push Your Branch to GitHub**:
 
    - Push your branch to the remote repository:
+
      ```bash
      git push -u origin feature/your-feature-name
      ```
@@ -92,7 +95,9 @@ Our development process follows a structured Git branching strategy to ensure sm
    - Review and approve the PR, and merge using a merge commit.
 
 7. **Update `develop`**:
+
    - Update `develop` to bring the latest changes in `main`:
+
      ```bash
      git switch develop
      git pull origin develop
