@@ -25,7 +25,9 @@ APIs should be designed to provide clear and intuitive access to resources. URLs
 
 **URL Structure**:
 
-/api/[resource-name]/[resource-id] (for individual resources) /api/[resource-name] (for collections of resources)
+```
+/api/[resource-name]/[resource-id]
+```
 
 **Examples**:
 
@@ -39,7 +41,9 @@ APIs should be designed to provide clear and intuitive access to resources. URLs
 
 Use query parameters to filter, sort, or paginate results.
 
+```
 /api/[resource-name]?sortBy=[field]&page=[number]&limit=[count]
+```
 
 **Example**:
 
@@ -69,7 +73,7 @@ APIs should use standard HTTP methods to indicate the action being performed on 
 
 ## 3. Authentication and Security
 
-APIs must be secure and protect sensitive data. Use the appropriate authentication and authorization mechanisms for API access.
+APIs must be secure and protect sensitive data. Use the appropriate authentication and authorisation mechanisms for API access.
 
 **Guidelines**:
 
@@ -80,7 +84,9 @@ APIs must be secure and protect sensitive data. Use the appropriate authenticati
 
 **Example Authentication Header**:
 
+```
 Authorization: Bearer [token]
+```
 
 **Data Encryption**:
 
@@ -143,7 +149,9 @@ To ensure that APIs can handle high traffic loads and protect against abuse, rat
 
 **Example Rate Limit Headers**:
 
+```
 X-RateLimit-Limit: 100 X-RateLimit-Remaining: 25 X-RateLimit-Reset: 1588610834
+```
 
 ---
 
