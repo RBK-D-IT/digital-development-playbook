@@ -48,7 +48,7 @@ We use AWS CDK as our primary tool for defining and managing infrastructure in A
 While AWS CDK is used to write infrastructure code, AWS CloudFormation is the underlying service that provisions and manages AWS resources. CDK generates CloudFormation templates, which are then used to deploy infrastructure resources in AWS.
 
 - **CloudFormation Capabilities**:
-  - **Stack Management**: CloudFormation organizes infrastructure as stacks, allowing us to easily manage, update, or delete resources in a single operation.
+  - **Stack Management**: CloudFormation organises infrastructure as stacks, allowing us to easily manage, update, or delete resources in a single operation.
   - **Rollback Capabilities**: If a deployment fails, CloudFormation automatically rolls back the infrastructure to its previous state, ensuring stability.
 
 ---
@@ -64,7 +64,7 @@ While AWS CDK is used to write infrastructure code, AWS CloudFormation is the un
 
 - When infrastructure changes are merged into the `main` branch, the CI/CD pipeline (using **GitHub Actions**) is triggered to deploy the infrastructure changes automatically.
   - **Development Environment**: Infrastructure changes are first deployed to the **development environment** for internal testing.
-  - **Test Environment**: Once validated, infrastructure changes are promoted to the **test environment** during the release candidate process.
+  - **Test Environment**: Once validated, infrastructure changes are promoted to the **test environment** for UAT.
   - **Production Environment**: After UAT, infrastructure changes are deployed to the **production environment**.
 
 3. **Deployment Process**
@@ -94,7 +94,7 @@ For every environment (development, test, production), the following steps are f
 
 ## Environment-Specific Configurations
 
-Each environment (development, test, production) may have different infrastructure requirements. Using AWS CDK, we can parameterize our infrastructure code to ensure that the correct resources are provisioned in each environment.
+Each environment (development, test, production) may have different infrastructure requirements. Using AWS CDK, we can parameterise our infrastructure code to ensure that the correct resources are provisioned in each environment.
 
 - **Development Environment**:
 
@@ -120,10 +120,10 @@ Each environment (development, test, production) may have different infrastructu
 - All infrastructure code must be stored in GitHub alongside application code.
 - Changes to infrastructure must go through the same PR review process as application code to ensure consistency and avoid misconfigurations.
 
-2. **Modularize Infrastructure**
+2. **Modularise Infrastructure**
 
 - Use modular components in AWS CDK to reuse infrastructure definitions across different environments and applications.
-- Modularizing infrastructure code makes it easier to manage and scale infrastructure resources.
+- Modularising infrastructure code makes it easier to manage and scale infrastructure resources.
 
 3. **Test Infrastructure Changes**
 
@@ -148,7 +148,7 @@ After infrastructure has been provisioned, it is important to monitor and mainta
 
 1. **Monitoring**
 
-- Use AWS CloudWatch to monitor the health, performance, and utilization of AWS resources.
+- Use AWS CloudWatch to monitor the health, performance, and utilisation of AWS resources.
 - Set up alarms to notify the team if there are any issues (e.g., high CPU usage, memory leaks, low disk space).
 
 2. **Cost Management**
