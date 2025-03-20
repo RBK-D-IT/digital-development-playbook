@@ -45,7 +45,7 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
 
 - Aim for at least 80% test coverage on critical code paths.
 - Unit tests should cover edge cases, error handling, and boundary conditions.
-- \*\*Integration tests should ensure correct data flow between components and services.
+- Integration tests should ensure correct data flow between components and services.
 - End-to-End tests should cover key user flows and high-priority features.
 - Maintain balance: while high test coverage is important, ensure that tests are meaningful and not just written for the sake of reaching a coverage number.
 
@@ -60,20 +60,24 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
 
   Example:
 
-  ```text
-  test('should return user data for valid user ID', () => {
-    // Arrange
-    const userId = 1;
+  ```csharp
+  [Fact]
+  public void ShouldReturnUserData_ForValidUserId()
+  {
+      // Arrange
+      var userId = 1;
+      var expected = new User { Id = 1, Name = "John Doe" };
 
-    // Act
-    const userData = getUserData(userId);
+      // Act
+      var userData = GetUserData(userId);
 
-    // Assert
-    expect(userData).toEqual({ id: 1, name: 'John Doe' });
-  });
+      // Assert
+      Assert.Equal(expected.Id, userData.Id);
+      Assert.Equal(expected.Name, userData.Name);
+  }
   ```
 
-- Write small, focused tests that each cover a specific behavior or scenario.
+- Write small, focused tests that each cover a specific behaviour or scenario.
 - Avoid complex logic within tests. Tests should be simple and test only one thing at a time.
 
 4. **Use Mocks and Stubs Where Necessary**
@@ -98,13 +102,12 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
 
 ## Tools and Frameworks
 
-- Use appropriate testing frameworks and tools for the language or platform you are working with (e.g., xUnit, JUnit, Mocha, etc.).
-- Choose mocking frameworks or tools that fit well with your project and make testing external dependencies easier (e.g., Moq, Mockito, Sinon, etc.).
-- For end-to-end testing, use tools that simulate user interactions with your application (e.g., Selenium, Cypress, Playwright, etc.).
+- Use appropriate testing frameworks and tools for the language or platform you are working with (e.g., xUnit).
+- Choose mocking frameworks or tools that fit well with your project and make testing external dependencies easier (e.g., Moq).
 
 ---
 
-## Test Structure and Organization
+## Test Structure and Organisation
 
 1. **Organize tests by functionality**:
 
@@ -119,7 +122,7 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
    Example:
 
    ```text
-   test_should_return_user_data_for_valid_user_id
+   ShouldReturnUserData_ForValidUserId
    ```
 
 ---
@@ -130,7 +133,7 @@ Testing is essential to ensure the quality, stability, and maintainability of ou
 - Ensure that no PR is merged unless:
   - All tests pass successfully.
   - Adequate test coverage is maintained.
-- Run tests in parallel where possible to optimize for speed, especially for end-to-end tests.
+- Run tests in parallel where possible to optimise for speed, especially for end-to-end tests.
 
 ---
 
